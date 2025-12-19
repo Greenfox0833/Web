@@ -1034,13 +1034,43 @@ a {
 
 @media (max-width: 900px) {
   .topbar {
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
   }
 
   .nav {
+    position: static;
+    transform: none;
+    width: 100%;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    justify-content: center;
+    gap: 12px;
+  }
+
+  .hero {
+    padding: 24px;
+  }
+
+  .hero-media {
+    justify-content: flex-start;
+  }
+
+  .hero-icon {
+    width: min(280px, 100%);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .season-scroll {
+    grid-auto-columns: minmax(200px, 1fr);
+  }
+
+  .season-banner {
+    min-height: 110px;
   }
 
   .community-card {
@@ -1062,7 +1092,48 @@ a {
 }
 
 @media (max-width: 600px) {
+  .page {
+    padding: 20px 5vw 64px;
+  }
+
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .hero-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .feature {
+    gap: 20px;
+  }
+
+  .season-head {
+    align-items: flex-start;
+  }
+
+  .season-banner {
+    min-height: 96px;
+  }
+
+  .season-banner-overlay {
+    padding: 16px;
+  }
+
   .blog-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .news-img {
+    height: 200px;
+  }
+
+  .shop {
+    padding: 18px;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
