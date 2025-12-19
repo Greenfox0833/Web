@@ -33,12 +33,14 @@ a {
   z-index: 10;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 20px;
   padding: 18px 6vw;
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(12, 20, 40, 0.08);
+  position: sticky;
+  position: relative;
 }
 
 .logo {
@@ -52,6 +54,10 @@ a {
   gap: 18px;
   font-size: 14px;
   color: var(--muted);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: center;
 }
 
 .nav a {
@@ -194,6 +200,19 @@ a {
   box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18);
 }
 
+.hero-media {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-icon {
+  width: min(360px, 100%);
+  max-width: 360px;
+  min-height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
 .feature {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -244,6 +263,304 @@ a {
   border-radius: 24px;
   object-fit: cover;
   box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18);
+}
+
+.season-section {
+  display: grid;
+  gap: 20px;
+}
+
+.season-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.season-head h2 {
+  margin: 8px 0 0;
+  font-size: clamp(22px, 3vw, 32px);
+}
+
+.season-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.season-scroll {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(240px, 1fr);
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.season-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.season-scroll::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.2);
+  border-radius: 999px;
+}
+
+.season-banner {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  min-height: 120px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.2);
+}
+
+.season-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.season-banner-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 20px;
+  display: grid;
+  align-content: center;
+  gap: 8px;
+  color: white;
+  background: linear-gradient(90deg, rgba(8, 12, 24, 0.75), rgba(8, 12, 24, 0.05));
+}
+
+.season-banner-tag {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  opacity: 0.85;
+}
+
+.season-banner-overlay h3 {
+  margin: 0;
+  padding: 0 0 30px 10px;
+  font-size: clamp(18px, 3vw, 28px);
+}
+
+.season-banner-overlay p {
+  margin: 0;
+  font-size: 13px;
+  padding-left: 10px;
+  opacity: 0.85;
+}
+
+.season-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 220px;
+  color: white;
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.18);
+  scroll-snap-align: start;
+}
+
+.season-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.season-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 18px;
+  display: grid;
+  align-content: end;
+  gap: 6px;
+  background: linear-gradient(180deg, rgba(5, 10, 20, 0), rgba(5, 10, 20, 0.8));
+}
+
+.season-overlay h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.season-overlay p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.season-tag {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  opacity: 0.85;
+}
+
+.blog-hero {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.blog-section {
+  display: grid;
+  gap: 20px;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.blog-link {
+  display: block;
+}
+
+.blog-link:hover .blog-card {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 40px rgba(15, 23, 42, 0.18);
+}
+
+.blog-card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.12);
+  display: grid;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-cover {
+  height: 160px;
+  background: #e2e8f0;
+}
+
+.blog-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.blog-body {
+  padding: 16px;
+  display: grid;
+  gap: 8px;
+}
+
+.blog-meta {
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.blog-body h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.blog-excerpt {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.blog-read {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.blog-empty {
+  margin: 0;
+  color: var(--muted);
+}
+
+.blog-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.page-btn {
+  border: 1px solid rgba(15, 23, 42, 0.2);
+  background: white;
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.page-btn.active {
+  background: var(--ink);
+  color: white;
+  border-color: transparent;
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.blog-post {
+  background: white;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.blog-post-hero {
+  height: 280px;
+  background: #e2e8f0;
+}
+
+.blog-post-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.blog-post-body {
+  padding: 24px;
+  display: grid;
+  gap: 12px;
+}
+
+.blog-post-body h1 {
+  margin: 0;
+  font-size: clamp(22px, 3vw, 32px);
+}
+
+.blog-post-content {
+  display: grid;
+  gap: 12px;
+  color: var(--muted);
+}
+
+.blog-post-content h2 {
+  margin: 12px 0 0;
+  color: var(--ink);
+  font-size: 18px;
+}
+
+.blog-post-content img {
+  width: 100%;
+  border-radius: 18px;
+  object-fit: cover;
 }
 
 .section {
@@ -396,6 +713,22 @@ a {
   align-items: center;
   justify-content: space-between;
   border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.ad-section {
+  padding: 0 6vw;
+  display: none;
+}
+
+.ad-slot {
+  border-radius: 18px;
+  min-height: 120px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(120deg, rgba(15, 23, 42, 0.08), rgba(15, 23, 42, 0.02));
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
 
 .footer-title {
@@ -713,5 +1046,23 @@ a {
   .community-card {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 1200px) {
+  .blog-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

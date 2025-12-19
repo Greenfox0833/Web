@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ブログ | フォートナイト情報アカウント</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="logo">FORTNITE INFO</div>
+                        <nav class="nav">
+                <a href="index.html">ホーム</a>
+                <a href="quests.html">クエスト</a>
+                <a href="blog.html" class="active">ブログ</a>
+            </nav>
+        </header>
+
+        <main class="page">
+            <section class="blog-hero">
+                <div>
+                    <p class="pill">Blog</p>
+                    <h1>攻略とアップデートをまとめて読む</h1>
+                    <p class="lead">ローカルJSONから最新記事を自動表示します。</p>
+                </div>
+            </section>
+
+            <section class="blog-section">
+                <div class="section-head">
+                    <h2>最新記事</h2>
+                    <p>blog.json を更新すると自動で反映されます。</p>
+                </div>
+                <div id="blog-list" class="blog-grid" aria-live="polite"></div>
+                <div id="blog-pagination" class="blog-pagination" aria-label="ページ切り替え"></div>
+            </section>
+        </main>        <section class="ad-section">
+            <div class="ad-slot">広告枠</div>
+        </section>
+
+
+        <footer class="footer">
+            <div>
+                <p class="footer-title">FORTNITE INFO</p>
+                <p class="footer-sub">公式情報を分かりやすく、スピーディーに。</p>
+            </div>
+            <div class="footer-links">
+                <a href="Rule.html">利用規約</a>
+                <a href="Privacy.html">プライバシー</a>
+                <a href="Tournament.html">大会情報</a>
+            </div>
+        </footer>
+
+        <script src="blog.js"></script>
+    </body>
+</html>
+
+
+
