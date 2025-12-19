@@ -75,7 +75,16 @@ function renderPage() {
 fetch("blog.json")
   .then((response) => response.json())
   .then((data) => {
-    posts = Array.isArray(data) ? data : [];
+    const now = Date.now();
+    posts = Array.isArray(data)
+      ? data.filter((post) => {
+          if (!post.publishAt) {
+            return true;
+          }
+          const publishTime = Date.parse(post.publishAt);
+          return Number.isFinite(publishTime) && publishTime <= now;
+        })
+      : [];
     currentPage = 1;
     renderPage();
   })
