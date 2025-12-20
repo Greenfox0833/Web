@@ -1,0 +1,12 @@
+﻿{
+  "layout": "list",
+  "title": "バトルロイヤル / Story Quests",
+  "items": [
+    {
+      "name": "端末を起動する (0/3)",
+      "desc": "報酬: 25,000 XP / ストーリー進行",
+      "chip": "story",
+      "chipLabel": "STORY"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -9,26 +9,13 @@
     </head>
     <body data-page="quests" data-base="..">
         <div data-include="../includes/header.html"></div>
-        <main class="quest-page">
-            <h1 class="quest-page-title">フォートナイト ORIGIN / Rank Quests</h1>
-            <div class="quest-list">
-                <div class="quest-item">
-                    <div>
-                        <p class="quest-name">ランキング戦で生存する (0/600秒)</p>
-                        <p class="quest-desc">報酬: 14,000 XP / ソロ推奨</p>
-                    </div>
-                    <span class="quest-chip rank">RANK</span>
-                </div>
-            </div>
-        </main>        <section class="ad-section">
+        <main class="quest-page" data-quest-mode="origin" data-quest-type="rank"></main>
+        <section class="ad-section">
             <div class="ad-slot">広告枠</div>
         </section>
 
         <div data-include="../includes/footer.html"></div>
-            <script src="../assets/js/components.js" defer></script>
+        <script src="../assets/js/quests.js"></script>
+        <script src="../assets/js/components.js" defer></script>
     </body>
 </html>
-
-
-
-

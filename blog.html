@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -18,6 +18,13 @@
                 </div>
             </section>
 
+            <section class="blog-featured" aria-label="注目記事">
+                <div class="section-head">
+                    <h2>注目記事</h2>
+                </div>
+                <div id="blog-featured" class="blog-featured-slot"></div>
+            </section>
+
             <section class="blog-section">
                 <div class="section-head">
                     <h2>最新記事</h2>
@@ -26,14 +33,14 @@
                 <div id="blog-list" class="blog-grid" aria-live="polite"></div>
                 <div id="blog-pagination" class="blog-pagination" aria-label="ページ切り替え"></div>
             </section>
-        </main>        <section class="ad-section">
+        </main>
+        <section class="ad-section">
             <div class="ad-slot">広告枠</div>
         </section>
-
 
         <div data-include="includes/footer.html"></div>
 
         <script src="assets/js/blog.js"></script>
-            <script src="assets/js/components.js" defer></script>
+        <script src="assets/js/components.js" defer></script>
     </body>
 </html>

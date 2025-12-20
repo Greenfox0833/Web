@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -9,87 +9,14 @@
     </head>
     <body data-page="quests" data-base="..">
         <div data-include="../includes/header.html"></div>
-        <main class="page quest-detail-page" data-current-week="3">
-            <section class="quest-detail-banner-wrap">
-                <div class="quest-detail-banner">
-                    <div class="quest-detail-banner-text">
-                        <h1 class="quest-detail-banner-title">ウィークリーハイライト</h1>
-                        <p class="quest-detail-banner-label">終了日: 2025年6月8日 午前3時30分まで</p>
-                    </div>
-                </div>
-                <img class="quest-detail-banner-art" src="../assets/img/T_UI_BattleBus_Quests.png" alt="クエストキャラクター">
-            </section>
-
-            <section class="quest-detail-section" data-week="1">
-                <h2>ウィーク1</h2>
-                <div class="quest-task-list">
-                    <article class="quest-task-card" data-start="2025-12-01T03:30:00+09:00">
-                        <div class="quest-task-body">
-                            <p class="quest-task-title">フレンドとパーティーを組み、クリエイター制作の体験でXPを獲得する</p>
-                            <p class="quest-task-date"></p>
-                        </div>
-                        <div class="quest-task-side">
-                            <img class="quest-task-icon" src="../assets/img/T_UI_UniversalXP_Icon_Standard_512.png" width="48" height="48" alt="XP">
-                            <span class="quest-task-xp">60,000</span>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <section class="quest-detail-section" data-week="2">
-                <h2>ウィーク2</h2>
-                <div class="quest-task-list">
-                    <article class="quest-task-card" data-start="2025-12-11T03:30:00+09:00">
-                        <div class="quest-task-body">
-                            <p class="quest-task-title">フレンドとパーティーを組み、Epic制作の体験でXPを獲得する (1)</p>
-                            <p class="quest-task-date"></p>
-                        </div>
-                        <div class="quest-task-side">
-                            <img class="quest-task-icon" src="../assets/img/T_UI_UniversalXP_Icon_Standard_512.png" width="48" height="48" alt="XP">
-                            <span class="quest-task-xp">60,000</span>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <section class="quest-detail-section" data-week="3">
-                <h2>ウィーク3</h2>
-                <div class="quest-task-list">
-                    <article class="quest-task-card" data-start="2025-12-18T03:30:00+09:00">
-                        <div class="quest-task-body">
-                            <p class="quest-task-title">フレンドとパーティーを組み、Epic制作の体験でXPを獲得する (1)</p>
-                            <p class="quest-task-date"></p>
-                        </div>
-                        <div class="quest-task-side">
-                            <img class="quest-task-icon" src="../assets/img/T_UI_UniversalXP_Icon_Standard_512.png" width="48" height="48" alt="XP">
-                            <span class="quest-task-xp">60,000</span>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <section class="quest-detail-section" data-week="4">
-                <h2>ウィーク4</h2>
-                <div class="quest-task-list">
-                    <article class="quest-task-card" data-start="2025-12-25T23:00:00+09:00">
-                        <div class="quest-task-body">
-                            <p class="quest-task-title">フレンドとパーティーを組み、Epic制作の体験でXPを獲得する (1)</p>
-                            <p class="quest-task-date"></p>
-                        </div>
-                        <div class="quest-task-side">
-                            <img class="quest-task-icon" src="../assets/img/T_UI_UniversalXP_Icon_Standard_512.png" width="48" height="48" alt="XP">
-                            <span class="quest-task-xp">60,000</span>
-                        </div>
-                    </article>
-                </div>
-            </section>
-        </main>
+        <main class="page quest-detail-page" data-quest-mode="br" data-quest-type="weekly"></main>
         <section class="ad-section">
             <div class="ad-slot">広告枠</div>
         </section>
 
         <div data-include="../includes/footer.html"></div>
+        <script src="../assets/js/quests.js"></script>
         <script src="../assets/js/quest-schedule.js"></script>
-            <script src="../assets/js/components.js" defer></script>
+        <script src="../assets/js/components.js" defer></script>
     </body>
 </html>

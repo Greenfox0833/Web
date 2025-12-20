@@ -1,0 +1,12 @@
+﻿{
+  "layout": "list",
+  "title": "フォートナイト ORIGIN / Story Quests",
+  "items": [
+    {
+      "name": "古代遺跡を調査する (0/1)",
+      "desc": "報酬: 22,000 XP / ストーリー進行",
+      "chip": "story",
+      "chipLabel": "STORY"
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 const list = document.getElementById("blog-list");
+const featuredSlot = document.getElementById("blog-featured");
 const pagination = document.getElementById("blog-pagination");
 const filters = document.getElementById("blog-filters");
 const pageSize = 15;
@@ -7,6 +8,7 @@ let filteredPosts = [];
 let currentPage = 1;
 let tagMap = {};
 let activeTag = "all";
+const featuredPostId = "post-003";
 
 const normalizeDateTime = (value) => {
   if (typeof value !== "string") {
@@ -44,7 +46,7 @@ const getPostTime = (post) => {
 
 function renderPosts(items) {
   if (!Array.isArray(items) || items.length === 0) {
-    list.innerHTML = "<p class=\"blog-empty\">記事がまだありません。</p>";
+    list.innerHTML = "<p class=\"blog-empty\">記事がまだありません、E/p>";
     pagination.innerHTML = "";
     return;
   }
@@ -84,6 +86,49 @@ function renderPosts(items) {
       `;
     })
     .join("");
+}
+
+function renderFeatured(post) {
+  if (!featuredSlot) {
+    return;
+  }
+
+  if (!post) {
+    featuredSlot.innerHTML = "<p class=\"blog-empty\">注目記事がまだありません</p>";
+    return;
+  }
+
+  const title = post.title || "Untitled";
+  const date = post.date || "";
+  const category = post.category || "";
+  const excerpt = post.excerpt || "";
+  const cover = post.cover || "";
+  const id = post.id || "";
+  const tags = Array.isArray(post.tags) ? post.tags : [];
+  const path = post.path || (id ? `blog/posts/${id}/index.html` : "blog.html");
+  const tagLabels = tags.map((tag) => tagMap[tag] || tag);
+  const tagHtml = tagLabels.length
+    ? `<div class=\"blog-tags\">${tagLabels
+        .map((tag) => `<span class=\"blog-tag\">${tag}</span>`)
+        .join("")}</div>`
+    : "";
+
+  featuredSlot.innerHTML = `
+    <a class="blog-featured-link" href="${path}">
+      <article class="blog-featured-card">
+        <div class="blog-featured-cover">
+          ${cover ? `<img src="${cover}" alt="${title}">` : ""}
+        </div>
+        <div class="blog-featured-body">
+          <p class="blog-meta">${date} / ${category}</p>
+          <h3>${title}</h3>
+          ${tagHtml}
+          <p class="blog-excerpt">${excerpt}</p>
+          <span class="blog-read">続きを読む</span>
+        </div>
+      </article>
+    </a>
+  `;
 }
 
 function renderPagination(total) {
@@ -178,12 +223,14 @@ Promise.all([
         })
       : [];
     posts.sort((a, b) => getPostTime(b) - getPostTime(a));
+    const featuredPost = posts.find((post) => post.id === featuredPostId);
+    renderFeatured(featuredPost);
     filteredPosts = posts.slice();
     buildFilters(posts);
     applyFilter();
   })
   .catch(() => {
-    list.innerHTML = "<p class=\"blog-empty\">読み込みに失敗しました。</p>";
+    list.innerHTML = "<p class=\"blog-empty\">読み込みに失敗しました、E/p>";
     pagination.innerHTML = "";
     if (filters) {
       filters.innerHTML = "";
@@ -219,3 +266,4 @@ if (filters) {
     filters.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 }
+

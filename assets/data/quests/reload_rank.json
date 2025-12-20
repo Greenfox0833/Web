@@ -1,0 +1,12 @@
+﻿{
+  "layout": "list",
+  "title": "リロード / Rank Quests",
+  "items": [
+    {
+      "name": "ランクマッチで撃破 (0/3)",
+      "desc": "報酬: 10,000 XP / 期間限定",
+      "chip": "rank",
+      "chipLabel": "RANK"
+    }
+  ]
+}

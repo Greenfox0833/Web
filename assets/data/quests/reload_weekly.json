@@ -1,0 +1,12 @@
+﻿{
+  "layout": "list",
+  "title": "リロード / Weekly Quests",
+  "items": [
+    {
+      "name": "リロードでトップ10に入る (0/1)",
+      "desc": "報酬: 12,000 XP / デュオ推奨",
+      "chip": "weekly",
+      "chipLabel": "WEEKLY"
+    }
+  ]
+}

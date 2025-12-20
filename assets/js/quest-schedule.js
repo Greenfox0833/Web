@@ -1,4 +1,4 @@
-(() => {
+﻿(() => {
   const page = document.querySelector(".quest-detail-page");
   if (!page) {
     return;
@@ -16,7 +16,7 @@
     return `${year}年${month}月${day}日 ${hours}:${minutes}`;
   };
 
-  document.querySelectorAll(".quest-detail-section[data-week]").forEach((section) => {
+  document.querySelectorAll(".quest-week[data-week]").forEach((section) => {
     const week = Number(section.dataset.week || "0");
     if (week > currentWeek + 1) {
       section.hidden = true;

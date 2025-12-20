@@ -1,0 +1,111 @@
+﻿{
+  "layout": "weekly",
+  "title": "ウィークリーハイライト",
+  "expires": "終了: 2025年6月1日 午前3時30分まで",
+  "bannerImage": "assets/img/T_UI_BattleBus_Quests.png",
+  "bannerAlt": "クエストキャラクター",
+  "currentWeek": 3,
+  "weeks": [
+    {
+      "week": 1,
+      "label": "ウィーク1",
+      "tasks": [
+        {
+          "title": "アーク・ライトニングガンで敵にダメージを与える (500)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "1レベル",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_LevelUp_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ストームのダメージを受けずに他のプレイヤーより長く生き延びる (40)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "熱気球から名前付きのエリアに着地する (3)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "乗り物でブーストして一定距離を移動する (500)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "アーク・ライトニングガンで敵にダメージを与える (500)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "熱気球から名前付きのエリアに着地する (3)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "乗り物でブーストして一定距離を移動する (500)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "アーク・ライトニングガンで敵にダメージを与える (500)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "label": "ウィーク2",
+      "tasks": [
+        {
+          "title": "ストームのダメージを受けずに他のプレイヤーより長く生き延びる (1)",
+          "start": "2025-12-11T03:30:00+09:00",
+          "xp": "60,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "label": "ウィーク3",
+      "tasks": [
+        {
+          "title": "フレンドとパーティーを組み、Epic制作体験でXPを獲得する (1)",
+          "start": "2025-12-18T03:30:00+09:00",
+          "xp": "60,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "label": "ウィーク4",
+      "tasks": [
+        {
+          "title": "フレンドとパーティーを組み、Epic制作体験でXPを獲得する (1)",
+          "start": "2025-12-25T23:00:00+09:00",
+          "xp": "60,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    }
+  ]
+}
