@@ -8,6 +8,40 @@ let currentPage = 1;
 let tagMap = {};
 let activeTag = "all";
 
+const normalizeDateTime = (value) => {
+  if (typeof value !== "string") {
+    return "";
+  }
+  const trimmed = value.trim();
+  if (!trimmed) {
+    return "";
+  }
+  const match = trimmed.match(
+    /^(\d{4}-\d{2}-\d{2}T\d{2}:\d{2})(:\d{2})?(Z|[+-]\d{2}:\d{2})?$/
+  );
+  if (!match) {
+    return trimmed;
+  }
+  const seconds = match[2] ? match[2] : ":00";
+  const zone = match[3] ? match[3] : "";
+  return `${match[1]}${seconds}${zone}`;
+};
+
+const parseDate = (value) => {
+  const normalized = normalizeDateTime(value);
+  const time = Date.parse(normalized);
+  return Number.isFinite(time) ? time : Number.NaN;
+};
+
+const getPostTime = (post) => {
+  const publishTime = parseDate(post.publishAt);
+  if (Number.isFinite(publishTime)) {
+    return publishTime;
+  }
+  const dateTime = parseDate(post.date);
+  return Number.isFinite(dateTime) ? dateTime : 0;
+};
+
 function renderPosts(items) {
   if (!Array.isArray(items) || items.length === 0) {
     list.innerHTML = "<p class=\"blog-empty\">記事がまだありません。</p>";
@@ -139,10 +173,11 @@ Promise.all([
           if (!post.publishAt) {
             return true;
           }
-          const publishTime = Date.parse(post.publishAt);
-          return Number.isFinite(publishTime) && publishTime <= now;
+          const publishTime = parseDate(post.publishAt);
+          return Number.isFinite(publishTime) ? publishTime <= now : true;
         })
       : [];
+    posts.sort((a, b) => getPostTime(b) - getPostTime(a));
     filteredPosts = posts.slice();
     buildFilters(posts);
     applyFilter();

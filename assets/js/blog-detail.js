@@ -5,12 +5,37 @@ if (latestList) {
   const maxItems = 6;
   let tagMap = {};
 
+  const normalizeDateTime = (value) => {
+    if (typeof value !== "string") {
+      return "";
+    }
+    const trimmed = value.trim();
+    if (!trimmed) {
+      return "";
+    }
+    const match = trimmed.match(
+      /^(\d{4}-\d{2}-\d{2}T\d{2}:\d{2})(:\d{2})?(Z|[+-]\d{2}:\d{2})?$/
+    );
+    if (!match) {
+      return trimmed;
+    }
+    const seconds = match[2] ? match[2] : ":00";
+    const zone = match[3] ? match[3] : "";
+    return `${match[1]}${seconds}${zone}`;
+  };
+
+  const parseDate = (value) => {
+    const normalized = normalizeDateTime(value);
+    const time = Date.parse(normalized);
+    return Number.isFinite(time) ? time : Number.NaN;
+  };
+
   const getPostTime = (post) => {
-    const publishTime = post.publishAt ? Date.parse(post.publishAt) : Number.NaN;
+    const publishTime = parseDate(post.publishAt);
     if (Number.isFinite(publishTime)) {
       return publishTime;
     }
-    const dateTime = post.date ? Date.parse(post.date) : Number.NaN;
+    const dateTime = parseDate(post.date);
     return Number.isFinite(dateTime) ? dateTime : 0;
   };
 
@@ -80,8 +105,8 @@ if (latestList) {
             if (!post.publishAt) {
               return true;
             }
-            const publishTime = Date.parse(post.publishAt);
-            return Number.isFinite(publishTime) && publishTime <= now;
+            const publishTime = parseDate(post.publishAt);
+            return Number.isFinite(publishTime) ? publishTime <= now : true;
           })
         : [];
 

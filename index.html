@@ -79,7 +79,7 @@
                         </div>
                     </article>
                     <article class="season-card">
-                        <img src="assets/img/picture/Juno_Rise_of_the_Ninja.png" alt="FNCS 2026">
+                        <img src="assets/img/picture/Juno_Rise_of_the_Ninja.png" alt="Juno_Rise_of_the_Ninja">
                         <div class="season-overlay">
                             <p class="season-tag">LEGO Fortnite</p>
                             <h3>Rise of the Ninja</h3>
@@ -87,7 +87,7 @@
                         </div>
                     </article>
                     <article class="season-card">
-                        <img src="assets/img/picture/Sparks_S12.png" alt="FNCS 2026">
+                        <img src="assets/img/picture/Sparks_S12.png" alt="Sparks_S12">
                         <div class="season-overlay">
                             <p class="season-tag">Fortnite Festival</p>
                             <h3>シーズン12</h3>
@@ -95,7 +95,7 @@
                         </div>
                     </article>
                     <article class="season-card">
-                        <img src="assets/img/picture/A7EB42CB0566464306F1CDC9DA83AEA4B240D09D.jpeg" alt="FNCS 2026">
+                        <img src="assets/img/picture/A7EB42CB0566464306F1CDC9DA83AEA4B240D09D.jpeg" alt="DelMar_S10">
                         <div class="season-overlay">
                             <p class="season-tag">Rocket Racing</p>
                             <h3>シーズン10</h3>
@@ -240,6 +240,39 @@
         <script>
             const latestBlogList = document.getElementById("latest-blog-list");
             const homeTournamentList = document.getElementById("home-tournament-today");
+            const normalizeDateTime = (value) => {
+                if (typeof value !== "string") {
+                    return "";
+                }
+                const trimmed = value.trim();
+                if (!trimmed) {
+                    return "";
+                }
+                const match = trimmed.match(
+                    /^(\d{4}-\d{2}-\d{2}T\d{2}:\d{2})(:\d{2})?(Z|[+-]\d{2}:\d{2})?$/
+                );
+                if (!match) {
+                    return trimmed;
+                }
+                const seconds = match[2] ? match[2] : ":00";
+                const zone = match[3] ? match[3] : "";
+                return `${match[1]}${seconds}${zone}`;
+            };
+
+            const parseDate = (value) => {
+                const normalized = normalizeDateTime(value);
+                const time = Date.parse(normalized);
+                return Number.isFinite(time) ? time : Number.NaN;
+            };
+
+            const getPostTime = (post) => {
+                const publishTime = parseDate(post.publishAt);
+                if (Number.isFinite(publishTime)) {
+                    return publishTime;
+                }
+                const dateTime = parseDate(post.date);
+                return Number.isFinite(dateTime) ? dateTime : 0;
+            };
             if (latestBlogList) {
                 fetch("assets/data/blog.json")
                     .then((response) => response.json())
@@ -255,13 +288,11 @@
                                 if (!post.publishAt) {
                                     return true;
                                 }
-                                const publishTime = Date.parse(post.publishAt);
-                                return Number.isFinite(publishTime) && publishTime <= now;
+                                const publishTime = parseDate(post.publishAt);
+                                return Number.isFinite(publishTime) ? publishTime <= now : true;
                             })
                             .sort((a, b) => {
-                                const timeA = Date.parse(a.publishAt || a.date || "") || 0;
-                                const timeB = Date.parse(b.publishAt || b.date || "") || 0;
-                                return timeB - timeA;
+                                return getPostTime(b) - getPostTime(a);
                             })
                             .slice(0, 3);
 
