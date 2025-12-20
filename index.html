@@ -3,46 +3,22 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap">
         <title>フォートナイト情報アカウント</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="assets/css/style.css">
     </head>
-    <body>
-        <header class="topbar">
-            <div class="logo"><a href="index.html">FORTNITE INFO</a></div>
-                        <nav class="nav">
-                <a href="index.html" class="active">ホーム</a>
-                <a href="quests.html">クエスト</a>
-                <a href="blog.html">ブログ</a>
-            </nav>
-        </header>
+    <body data-page="index" data-base="">
+        <div data-include="includes/header.html"></div>
 
         <main class="page">
-            <section class="hero">
-                <div class="hero-content">
-                    <p class="pill">日本語フォートナイト情報アカウント</p>
-                    <h1>今夜のバトルへ。<br>勝利に直結する最新情報。</h1>
-                    <p class="lead">新イベント、限定報酬、移動経路まで。必要な情報を、最短ルートで届けます。</p>
-                    <div class="hero-actions">
-                        <a class="btn primary" href="#news">今日のトップニュース</a>
-                        <a class="btn ghost" href="quests.html">クエストまとめ</a>
-                    </div>
-                    <div class="hero-meta">
-                        <div class="meta-card">
-                            <p class="meta-label">更新頻度</p>
-                            <p class="meta-value">毎日 / 18:00</p>
-                        </div>
-                        <div class="meta-card">
-                            <p class="meta-label">フォロワー</p>
-                            <p class="meta-value">124,000+</p>
-                        </div>
-                        <div class="meta-card">
-                            <p class="meta-label">新シーズン</p>
-                            <p class="meta-value">ORIGIN シーズン7開幕</p>
-                        </div>
-                    </div>
+            <section class="section home-blog-section">
+                <div class="section-head">
+                    <h2>最新ブログ</h2>
+                    <p>直近のアップデートとイベント情報をまとめてチェック。</p>
                 </div>
-                <div class="hero-media">
-                    <img class="hero-icon" src="Greenfox_Icon.png" alt="最新シーズンのキービジュアル">
+                <div class="blog-grid home-blog-grid" id="latest-blog-list" aria-live="polite"></div>
+                <div class="feature-actions">
+                    <a class="btn ghost" href="blog.html">ブログ一覧へ</a>
                 </div>
             </section>
 
@@ -54,53 +30,89 @@
                     </div>
                 </div>
                 <div class="season-banner">
-                    <img src="ForbiddenFrurt_BLEACH.png" alt="期間限定イベントバナー">
+                    <img src="assets/img/ForbiddenFrurt_BLEACH.png" alt="期間限定イベントバナー">
                     <div class="season-banner-overlay">
-                        <h3>フォートナイト × BLEACH</h3>
+                        <p class="season-banner-tag">まもなく開催</p>
+                        <h3>フォートナイト / Blitz Royale × BLEACH</h3>
                         <p>『BLEACH』から、満を持して一護の斬魄刀などがBLITZに登場</p>
                     </div>
                 </div>
                 <div class="season-scroll" aria-label="フォートナイトのシーズン一覧">
                     <article class="season-card">
-                        <img src="https://cms-assets.unrealengine.com/cm6l5gfpm05kr07my04cqgy2x/output=format:webp/cmj0p28hr6oy306o8j05okap2" alt="ORIGIN シーズン7">
+                        <img src="assets/img/picture/Ch7S1.png" alt="ORIGIN シーズン7">
                         <div class="season-overlay">
-                            <p class="season-tag">ORIGIN</p>
+                            <p class="season-tag">バトルロイヤル・ゼロビルド</p>
+                            <h3>チャプター7 シーズン1</h3>
+                            <p>2025年11月30日 ～ 2026年3月5日まで</p>
+                        </div>
+                    </article>
+                    <article class="season-card">
+                        <img src="https://cms-assets.unrealengine.com/cm6l5gfpm05kr07my04cqgy2x/output=format:webp/cmj0p28hr6oy306o8j05okap2" alt="ウィンターフェスト2025">
+                        <div class="season-overlay">
+                            <p class="season-tag">フォートナイト ORIGIN</p>
+                            <h3>チャプター1 シーズン7</h3>
+                            <p>2025年12月11日 ～ 2026年3月19日まで</p>
+                        </div>
+                    </article>
+                    <article class="season-card">
+                        <img src="assets/img/picture/D6C49006E2201FAA0EEE4793F1A5BDB6E963CFD7.jpeg" alt="リロードエリートシリーズ">
+                        <div class="season-overlay">
+                            <p class="season-tag">フォートナイト リロード</p>
                             <h3>シーズン7</h3>
-                            <p>新バイオームと空中戦</p>
+                            <p>2025年11月30日 ～ 2026年2月9日</p>
                         </div>
                     </article>
                     <article class="season-card">
-                        <img src="https://cms-assets.unrealengine.com/cm6l5gfpm05kr07my04cqgy2x/cmiq2szoj1sll07okmc8gc4dd" alt="ウィンターフェスト2025">
+                        <img src="assets/img/picture/AB1412D1E0164059976908289C37B223C3069DC8.jpeg" alt="FNCS 2026">
                         <div class="season-overlay">
-                            <p class="season-tag">EVENT</p>
-                            <h3>ウィンターフェスト2025</h3>
-                            <p>限定報酬と雪の島</p>
+                            <p class="season-tag"></p>
+                            <h3>Blitz Royale</h3>
+                            <p></p>
                         </div>
                     </article>
                     <article class="season-card">
-                        <img src="https://cms-assets.unrealengine.com/cm6l5gfpm05kr07my04cqgy2x/cmja4zc5k07l207o8s9njnzwi" alt="リロードエリートシリーズ">
+                        <img src="assets/img/picture/1AAB7FE506DEFA0C249C559CA84930718AB8FA35.jpeg" alt="FNCS 2026">
                         <div class="season-overlay">
-                            <p class="season-tag">RELOAD</p>
-                            <h3>リロード エリート</h3>
-                            <p>高速ローテと短期戦</p>
+                            <p class="season-tag">Ballistic</p>
+                            <h3>シーズン3</h3>
+                            <p>2025年11月30日 ～ 2026年3月5日まで</p>
                         </div>
                     </article>
                     <article class="season-card">
-                        <img src="https://cms-assets.unrealengine.com/cm6l5gfpm05kr07my04cqgy2x/cmixikc3r1g9u07olqysqm677" alt="FNCS 2026">
+                        <img src="assets/img/picture/Juno_Rise_of_the_Ninja.png" alt="FNCS 2026">
                         <div class="season-overlay">
-                            <p class="season-tag">FNCS</p>
-                            <h3>Championship 2026</h3>
-                            <p>賞金総額1000万ドル</p>
+                            <p class="season-tag">LEGO Fortnite</p>
+                            <h3>Rise of the Ninja</h3>
+                            <p>2025年12月11日 ～ 2026年4月2日まで</p>
                         </div>
                     </article>
                     <article class="season-card">
-                        <img src="https://cms-assets.unrealengine.com/cm6l5gfpm05kr07my04cqgy2x/cmixikc3r1g9u07olqysqm677" alt="FNCS 2026">
+                        <img src="assets/img/picture/Sparks_S12.png" alt="FNCS 2026">
                         <div class="season-overlay">
-                            <p class="season-tag">FNCS</p>
-                            <h3>Championship 2026</h3>
-                            <p>賞金総額1000万ドル</p>
+                            <p class="season-tag">Fortnite Festival</p>
+                            <h3>シーズン12</h3>
+                            <p>2025年12月11日 ～ 2026年2月5日まで</p>
                         </div>
                     </article>
+                    <article class="season-card">
+                        <img src="assets/img/picture/A7EB42CB0566464306F1CDC9DA83AEA4B240D09D.jpeg" alt="FNCS 2026">
+                        <div class="season-overlay">
+                            <p class="season-tag">Rocket Racing</p>
+                            <h3>シーズン10</h3>
+                            <p>2025年11月30日 ～ 2026年3月5日まで</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section home-tournament-section">
+                <div class="section-head">
+                    <h2>本日の競技</h2>
+                    <p>今日開催される大会をまとめてチェック。</p>
+                </div>
+                <div id="home-tournament-today" class="tournament-grid tournament-today-grid" aria-live="polite"></div>
+                <div class="feature-actions">
+                    <a class="btn ghost" href="Tournament.html">競技スケジュールを見る</a>
                 </div>
             </section>
 
@@ -224,16 +236,157 @@
         </section>
 
 
-        <footer class="footer">
-            <div>
-                <p class="footer-title">FORTNITE INFO</p>
-                <p class="footer-sub">公式情報を分かりやすく、スピーディーに。</p>
-            </div>
-            <div class="footer-links">
-                <a href="Rule.html">利用規約</a>
-                <a href="Privacy.html">プライバシー</a>
-                <a href="Tournament.html">大会情報</a>
-            </div>
-        </footer>
+        <div data-include="includes/footer.html"></div>
+        <script>
+            const latestBlogList = document.getElementById("latest-blog-list");
+            const homeTournamentList = document.getElementById("home-tournament-today");
+            if (latestBlogList) {
+                fetch("assets/data/blog.json")
+                    .then((response) => response.json())
+                    .then((data) => {
+                        if (!Array.isArray(data) || data.length === 0) {
+                            latestBlogList.innerHTML = "<p class=\"blog-empty\">記事がまだありません。</p>";
+                            return;
+                        }
+
+                        const now = Date.now();
+                        const posts = data
+                            .filter((post) => {
+                                if (!post.publishAt) {
+                                    return true;
+                                }
+                                const publishTime = Date.parse(post.publishAt);
+                                return Number.isFinite(publishTime) && publishTime <= now;
+                            })
+                            .sort((a, b) => {
+                                const timeA = Date.parse(a.publishAt || a.date || "") || 0;
+                                const timeB = Date.parse(b.publishAt || b.date || "") || 0;
+                                return timeB - timeA;
+                            })
+                            .slice(0, 3);
+
+                        if (posts.length === 0) {
+                            latestBlogList.innerHTML = "<p class=\"blog-empty\">記事がまだありません。</p>";
+                            return;
+                        }
+
+                        latestBlogList.innerHTML = posts
+                            .map((post) => {
+                                const title = post.title || "Untitled";
+                                const date = post.date || "";
+                                const category = post.category || "";
+                                const excerpt = post.excerpt || "";
+                                const cover = post.cover || "";
+                                const id = post.id || "";
+                                const path = post.path || (id ? `blog/posts/${id}/index.html` : "blog.html");
+                                const meta = [date, category].filter(Boolean).join(" / ");
+                                const metaHtml = meta ? `<p class="blog-meta">${meta}</p>` : "";
+
+                                return `
+                                    <a class="blog-link" href="${path}">
+                                        <article class="blog-card">
+                                            <div class="blog-cover">
+                                                ${cover ? `<img src="${cover}" alt="${title}">` : ""}
+                                            </div>
+                                            <div class="blog-body">
+                                                ${metaHtml}
+                                                <h3>${title}</h3>
+                                                <p class="blog-excerpt">${excerpt}</p>
+                                                <span class="blog-read">続きを読む</span>
+                                            </div>
+                                        </article>
+                                    </a>
+                                `;
+                            })
+                            .join("");
+                    })
+                    .catch(() => {
+                        latestBlogList.innerHTML = "<p class=\"blog-empty\">読み込みに失敗しました。</p>";
+                    });
+            }
+
+            const formatTime = (start, end) => {
+                if (start && end) {
+                    return `${start} - ${end}`;
+                }
+                if (start) {
+                    return `${start} -`;
+                }
+                return "時間未定";
+            };
+
+            const toMinutes = (timeText) => {
+                if (!timeText) {
+                    return null;
+                }
+                const parts = timeText.split(":");
+                if (parts.length !== 2) {
+                    return null;
+                }
+                const hours = Number(parts[0]);
+                const minutes = Number(parts[1]);
+                if (Number.isNaN(hours) || Number.isNaN(minutes)) {
+                    return null;
+                }
+                return hours * 60 + minutes;
+            };
+
+            const buildTournamentCards = (entries) => {
+                if (!entries || entries.length === 0) {
+                    return "<p class=\"tournament-empty\">本日の競技はありません。</p>";
+                }
+                return entries
+                    .map((entry, index) => {
+                        const title = entry.title || "(タイトル未設定)";
+                        const time = formatTime(entry.start, entry.end);
+                        const image = entry.displayPlaylistImage || "";
+                        const cover = image
+                            ? `<img class="tournament-thumb" src="${image}" alt="${title}">`
+                            : `<div class="tournament-thumb tournament-thumb--empty">NO IMAGE</div>`;
+
+                        return `
+                            <article class="tournament-card" style="--card-index:${index}">
+                                ${cover}
+                                <div class="tournament-card-body">
+                                    <p class="tournament-time">${time}</p>
+                                    <h3 class="tournament-title">${title}</h3>
+                                    <div class="tournament-meta">
+                                        <p class="tournament-tag">TOURNAMENT</p>
+                                        <a class="btn ghost tournament-action" href="Tournament.html">詳細を確認</a>
+                                    </div>
+                                </div>
+                            </article>
+                        `;
+                    })
+                    .join("");
+            };
+
+            if (homeTournamentList) {
+                fetch("assets/data/calendar_by_date.json")
+                    .then((response) => response.json())
+                    .then((data) => {
+                        const dates = Array.isArray(data.competitiveDates)
+                            ? data.competitiveDates
+                            : (Array.isArray(data.dates) ? data.dates : []);
+                        const now = new Date();
+                        const todayKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+                        const today = dates.find((day) => day.date === todayKey);
+                        const entries = today && Array.isArray(today.entries) ? today.entries : [];
+                        const nowMinutes = now.getHours() * 60 + now.getMinutes();
+                        const filteredEntries = entries.filter((entry) => {
+                            const endMinutes = toMinutes(entry.end);
+                            if (endMinutes === null) {
+                                return true;
+                            }
+                            return endMinutes >= nowMinutes;
+                        });
+                        homeTournamentList.innerHTML = buildTournamentCards(filteredEntries);
+                    })
+                    .catch(() => {
+                        homeTournamentList.innerHTML = "<p class=\"tournament-empty\">読み込みに失敗しました。</p>";
+                    });
+            }
+        </script>
+            <script src="assets/js/components.js" defer></script>
     </body>
 </html>

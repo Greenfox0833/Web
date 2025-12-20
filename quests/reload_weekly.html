@@ -3,18 +3,12 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap">
         <title>リロード Weekly Quests</title>
-        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
     </head>
-    <body>
-        <header class="topbar">
-            <div class="logo">FORTNITE INFO</div>
-                        <nav class="nav">
-                <a href="../index.html">ホーム</a>
-                <a href="../quests.html" class="active">クエスト</a>
-                <a href="../blog.html">ブログ</a>
-            </nav>
-        </header>
+    <body data-page="quests" data-base="..">
+        <div data-include="../includes/header.html"></div>
         <main class="quest-page">
             <h1 class="quest-page-title">リロード / Weekly Quests</h1>
             <div class="quest-list">
@@ -30,17 +24,8 @@
             <div class="ad-slot">広告枠</div>
         </section>
 
-        <footer class="footer">
-            <div>
-                <p class="footer-title">FORTNITE INFO</p>
-                <p class="footer-sub">公式情報を分かりやすく、スピーディーに。</p>
-            </div>
-            <div class="footer-links">
-                <a href="../Rule.html">利用規約</a>
-                <a href="../Privacy.html">プライバシー</a>
-                <a href="../Tournament.html">大会情報</a>
-            </div>
-        </footer>
+        <div data-include="../includes/footer.html"></div>
+            <script src="../assets/js/components.js" defer></script>
     </body>
 </html>
 

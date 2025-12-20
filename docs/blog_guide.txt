@@ -1,0 +1,62 @@
+﻿ブログ運用ガイド
+
+このファイルはブログの追加・更新方法をまとめた説明書です。
+
+1. ブログ一覧（assets/data/blog.json）の更新
+- assets/data/blog.json に記事データを追加します。新しい記事ほど上に並べるか、publishAt/dateで並び替えます。
+- 例:
+  {
+    "id": "post-003",
+    "title": "タイトル",
+    "date": "2025-12-20",
+    "publishAt": "2025-12-20T10:00+09:00",
+    "category": "カテゴリ",
+    "excerpt": "一覧に表示する短い説明",
+    "cover": "https://example.com/cover.jpg",
+    "path": "blog/posts/post-003/記事ファイル名.html",
+    "tags": ["season", "tips"]
+  }
+- publishAt が未来の場合は非表示になります。
+- path は blog/posts/以下のHTMLを指します。先頭に / は付けません。
+
+2. タグの管理（assets/data/tags.json）
+- assets/data/tags.json にタグの一覧を追加します。
+- 形式は "タグID": "表示名" です。
+  例:
+  {
+    "season": "シーズン",
+    "event": "イベント"
+  }
+- blog.json の tags にタグIDを配列で指定します。
+
+3. 記事ページの作成
+- blog/posts/以下にフォルダを作り、HTMLを配置します。
+- 例:
+  blog/posts/post-003/xxxxxxxx.html
+- HTMLの基本構造は既存記事をコピーしてください。
+- <main class="page blog-detail"> を維持します。
+- 記事末尾に <script src="../../../assets/js/blog-detail.js"></script> が必要です。
+
+4. 画像の置き方
+- cover は一覧・最新記事サイドバーのサムネイルです。
+- 記事内の画像は <img src="..."> を使います。
+- ローカル画像は assets/img/blog/post-xxx/ に置き、相対パスで指定します。
+  例: <img src="../../../assets/img/blog/post-003/image-1.jpg" alt="説明">
+
+5. 最新記事サイドバー
+- 詳細ページ左に「最新記事」リストが表示されます。
+- blog.json の publishAt/date をもとに新しい順で上位6件が表示されます。
+- サムネイルは cover が使われます。
+
+6. レイアウト調整（assets/css/style.css）
+- 詳細ページ全体の左右余白: .page.blog-detail
+- 詳細ページの最大幅/2カラム: .blog-detail-layout
+- 最新記事サイドバー: .blog-latest / .latest-thumb
+- ブログ本文の行間: .blog-post-content の line-height
+
+7. よくある確認
+- リンクが開けない場合: blog.json の path を確認
+- 画像が出ない場合: URL/ファイル名のスペル、拡張子を確認
+- 予約公開したい場合: publishAt を未来にする
+
+以上

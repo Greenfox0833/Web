@@ -3,57 +3,79 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>ウィンターフェスト2025まとめ</title>
-        <link rel="stylesheet" href="../../../style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap">
+        <title>フォートナイト ウィンターフェスト 2025：スピリットを感じよう！</title>
+        <link rel="stylesheet" href="../../../assets/css/style.css">
     </head>
-    <body>
-        <header class="topbar">
-            <div class="logo">FORTNITE INFO</div>
-                        <nav class="nav">
-                <a href="../../../index.html">ホーム</a>
-                <a href="../../../quests.html">クエスト</a>
-                <a href="../../../blog.html" class="active">ブログ</a>
-            </nav>
-        </header>
+    <body data-page="blog" data-base="../../..">
+        <div data-include="../../../includes/header.html"></div>
 
-        <main class="page">
-            <article class="blog-post">
+        <main class="page blog-detail">
+            <div class="blog-detail-layout">
+                <aside class="blog-latest" aria-label="最新記事">
+                    <h2>最新記事</h2>
+                    <div id="blog-latest-list" class="latest-list"></div>
+                </aside>
+                <article class="blog-post blog-detail-main">
                 <div class="blog-post-hero">
-                    <img src="cover.jpg" alt="ウィンターフェスト2025">
+                    <img src="https://fn-creator-community-cdn.qstv.on.epicgames.com/2a75835a-768c-483f-a16d-9f39612c1d25/post-image-block_1024x576.webp" alt="ウィンターフェスト2025">
                 </div>
                 <div class="blog-post-body">
                     <p class="blog-meta">2025-12-17 / イベント</p>
-                    <h1>ウィンターフェスト2025まとめ</h1>
+                    <div id="blog-tags" class="blog-tags"></div>
+                    <h1>フォートナイト ウィンターフェスト 2025：スピリットを感じよう！</h1>
                     <div class="blog-post-content">
-                        <p>ウィンターフェスト2025は、毎日更新されるプレゼントと限定クエストが目玉です。短時間で消化できるクエストを優先して、報酬の取り逃しを防ぎましょう。</p>
-                        <h2>毎日のプレゼント</h2>
-                        <p>ログイン後にプレゼントエリアへ移動すると受け取れます。日替わりなので、早めの回収が安全です。</p>
-                        <h2>限定クエストの進め方</h2>
-                        <p>雪エリア中心のクエストが多く、回収ルートを決めておくとスムーズです。移動系アイテムを持ち込むと効率が上がります。</p>
-                        <img src="image-1.jpg" alt="イベントエリアのイメージ">
-                        <h2>報酬を最短で集めるコツ</h2>
-                        <p>チームで分担することで達成速度が大きく変わります。完了したメンバーは回復と補給を担当するのが安定します。</p>
+                        <p>❄️ウィンターフェストがゴールデン・コーストに到来！<br>お祭り感あふれる復活復活、マップを覆う雪景色、そして毎日1つ開けられる新しいプレゼントが登場します！</p>
+                        <h2>冬テーマの復活復活</h2>
+                        <p>ゴールデン・コースト全域で気温が下がる中、冬をテーマにしたアイテムが島へ戻ってきました。</p>
+                        <ul id="bloglist">
+                            <li>ブリザードグレネード</li>
+                            <li>スノーボールランチャー</li>
+                            <li>スノーマン</li>
+                        </ul>
+                        <h2>プレゼント</h2>
+                        <p>今年の投げられるプレゼントの中からは、以下のような懐かしの高レアリティ武器を入手できます。</p>
+                        <ul id="bloglist">
+                            <li>ドラムガン</li>
+                            <li>シックスシューター</li>
+                            <li>ハンティングライフル</li>
+                            <li>コンパクトSMG</li>
+                            <li>OGポンプショットガン</li>
+                            <li>インファントリーライフル</li>
+                            <li>レバーアクションショットガン</li>
+                            <li>OGアサルトライフル</li>
+                            <li>ミニガン</li>
+                        </ul>
+                        <p>さらに、新たな裂け目アノマリーが2種類登場予定。<br>そのうち1つは……懐かしさ全開のサプライズです👀</p>
+                        <img src="https://fn-creator-community-cdn.qstv.on.epicgames.com/2a75835a-768c-483f-a16d-9f39612c1d25/post-image-block_1024x576.webp" alt="イベントエリアのイメージ">
+                        <h2>ボスとして参戦：ユール・トルーパー</h2>
+                        <p>島を巡回する新たなフェスティブボス「ユール・トルーパー」が登場！
+                            <br>ボスを倒すと、ミシック・ホロSMGを入手でき、さらにその力を手に入れることで、指を鳴らすだけでアイシーフィート効果を発動可能。<br>
+                            島中を滑り回りながら“ホリデーの喜び”を振りまき、敵をロビーへ送り返そう！
+                        </p>
+                        <h2>ウィンターフェスト・キャビンが復活！</h2>
+                        <p>ウィンター中尉が、今年は14個のプレゼントを持ってやってきました！
+                            <br>1日につき1つプレゼントを開封できます。
+                        </p>
+                        <ul id="bloglist">
+                            <li>7個開けると → コスチューム「グレイシャル・ダミー」</li>
+                            <li>13個開けると → コスチューム「チークス」</li>
+                        </ul>
+                        <p>
+                            残りのプレゼントは好きな順番で開封可能です。<br>キャビンは毎日 午後11時（日本時間）に更新されます。
+                        </p>
+                        <img src="https://fn-creator-community-cdn.qstv.on.epicgames.com/38a4ca5a-505b-4836-866f-defa92dee213/post-image-block_1024x576.webp" aly="ウィンターキャビン">
                     </div>
                 </div>
-            </article>
+                </article>
+            </div>
         </main>        <section class="ad-section">
             <div class="ad-slot">広告枠</div>
         </section>
 
 
-        <footer class="footer">
-            <div>
-                <p class="footer-title">FORTNITE INFO</p>
-                <p class="footer-sub">公式情報を分かりやすく、スピーディーに。</p>
-            </div>
-            <div class="footer-links">
-                <a href="../../../Rule.html">利用規約</a>
-                <a href="../../../Privacy.html">プライバシー</a>
-                <a href="../../../Tournament.html">大会情報</a>
-            </div>
-        </footer>
+        <div data-include="../../../includes/footer.html"></div>
+        <script src="../../../assets/js/blog-detail.js"></script>
+            <script src="../../../assets/js/components.js" defer></script>
     </body>
 </html>
-
-
-

@@ -3,44 +3,83 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap">
         <title>バトルロイヤル Weekly Quests</title>
-        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
     </head>
-    <body>
-        <header class="topbar">
-            <div class="logo">FORTNITE INFO</div>
-                        <nav class="nav">
-                <a href="../index.html">ホーム</a>
-                <a href="../quests.html" class="active">クエスト</a>
-                <a href="../blog.html">ブログ</a>
-            </nav>
-        </header>
-        <main class="quest-detail">
-            <section class="quest-hero weekly">
-                <div class="quest-hero-content">
-                    <p class="quest-hero-kicker">フォートナイト</p>
-                    <h1>バトルロイヤル / Weekly Quests</h1>
-                    <p class="quest-hero-date">2025年5月23日〜2025年6月8日 午前3時30分まで</p>
+    <body data-page="quests" data-base="..">
+        <div data-include="../includes/header.html"></div>
+        <main class="page quest-detail-page" data-current-week="3">
+            <section class="quest-detail-banner-wrap">
+                <div class="quest-detail-banner">
+                    <div class="quest-detail-banner-text">
+                        <h1 class="quest-detail-banner-title">ウィークリーハイライト</h1>
+                        <p class="quest-detail-banner-label">終了日: 2025年6月8日 午前3時30分まで</p>
+                    </div>
                 </div>
-                <div class="quest-hero-art"></div>
+                <img class="quest-detail-banner-art" src="../assets/img/T_UI_BattleBus_Quests.png" alt="クエストキャラクター">
             </section>
 
-            <section class="quest-panel">
-                <h2>バトルロイヤル / Weekly Quests</h2>
-                <div class="quest-detail-list">
-                    <article class="quest-detail-card">
-                        <div>
-                            <p class="quest-detail-title">スラップジュースを消費する (0/4)</p>
-                            <p class="quest-detail-sub">報酬: 20,000 XP / 期間: 12/25まで</p>
+            <section class="quest-detail-section" data-week="1">
+                <h2>ウィーク1</h2>
+                <div class="quest-task-list">
+                    <article class="quest-task-card" data-start="2025-12-01T03:30:00+09:00">
+                        <div class="quest-task-body">
+                            <p class="quest-task-title">フレンドとパーティーを組み、クリエイター制作の体験でXPを獲得する</p>
+                            <p class="quest-task-date"></p>
                         </div>
-                        <span class="quest-detail-tag weekly">WEEKLY</span>
+                        <div class="quest-task-side">
+                            <img class="quest-task-icon" src="../assets/img/T_UI_UniversalXP_Icon_Standard_512.png" width="48" height="48" alt="XP">
+                            <span class="quest-task-xp">60,000</span>
+                        </div>
                     </article>
-                    <article class="quest-detail-card">
-                        <div>
-                            <p class="quest-detail-title">宝箱を開ける (0/7)</p>
-                            <p class="quest-detail-sub">報酬: 15,000 XP / ソロ・デュオ</p>
+                </div>
+            </section>
+
+            <section class="quest-detail-section" data-week="2">
+                <h2>ウィーク2</h2>
+                <div class="quest-task-list">
+                    <article class="quest-task-card" data-start="2025-12-11T03:30:00+09:00">
+                        <div class="quest-task-body">
+                            <p class="quest-task-title">フレンドとパーティーを組み、Epic制作の体験でXPを獲得する (1)</p>
+                            <p class="quest-task-date"></p>
                         </div>
-                        <span class="quest-detail-tag weekly">WEEKLY</span>
+                        <div class="quest-task-side">
+                            <img class="quest-task-icon" src="../assets/img/T_UI_UniversalXP_Icon_Standard_512.png" width="48" height="48" alt="XP">
+                            <span class="quest-task-xp">60,000</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="quest-detail-section" data-week="3">
+                <h2>ウィーク3</h2>
+                <div class="quest-task-list">
+                    <article class="quest-task-card" data-start="2025-12-18T03:30:00+09:00">
+                        <div class="quest-task-body">
+                            <p class="quest-task-title">フレンドとパーティーを組み、Epic制作の体験でXPを獲得する (1)</p>
+                            <p class="quest-task-date"></p>
+                        </div>
+                        <div class="quest-task-side">
+                            <img class="quest-task-icon" src="../assets/img/T_UI_UniversalXP_Icon_Standard_512.png" width="48" height="48" alt="XP">
+                            <span class="quest-task-xp">60,000</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="quest-detail-section" data-week="4">
+                <h2>ウィーク4</h2>
+                <div class="quest-task-list">
+                    <article class="quest-task-card" data-start="2025-12-25T23:00:00+09:00">
+                        <div class="quest-task-body">
+                            <p class="quest-task-title">フレンドとパーティーを組み、Epic制作の体験でXPを獲得する (1)</p>
+                            <p class="quest-task-date"></p>
+                        </div>
+                        <div class="quest-task-side">
+                            <img class="quest-task-icon" src="../assets/img/T_UI_UniversalXP_Icon_Standard_512.png" width="48" height="48" alt="XP">
+                            <span class="quest-task-xp">60,000</span>
+                        </div>
                     </article>
                 </div>
             </section>
@@ -49,20 +88,8 @@
             <div class="ad-slot">広告枠</div>
         </section>
 
-        <footer class="footer">
-            <div>
-                <p class="footer-title">FORTNITE INFO</p>
-                <p class="footer-sub">公式情報を分かりやすく、スピーディーに。</p>
-            </div>
-            <div class="footer-links">
-                <a href="../Rule.html">利用規約</a>
-                <a href="../Privacy.html">プライバシー</a>
-                <a href="../Tournament.html">大会情報</a>
-            </div>
-        </footer>
+        <div data-include="../includes/footer.html"></div>
+        <script src="../assets/js/quest-schedule.js"></script>
+            <script src="../assets/js/components.js" defer></script>
     </body>
 </html>
-
-
-
-

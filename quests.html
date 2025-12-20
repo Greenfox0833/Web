@@ -3,20 +3,14 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap">
         <title>クエストまとめ | フォートナイト情報アカウント</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="assets/css/style.css">
     </head>
-    <body>
-        <header class="topbar">
-            <div class="logo">FORTNITE INFO</div>
-                        <nav class="nav">
-                <a href="index.html">ホーム</a>
-                <a href="quests.html" class="active">クエスト</a>
-                <a href="blog.html">ブログ</a>
-            </nav>
-        </header>
+    <body data-page="quests" data-base="">
+        <div data-include="includes/header.html"></div>
 
-        <main class="page">
+        <main class="page quests-page">
             <section class="quest-hub">
                 <div class="quest-hub-head">
                     <p class="pill">クエスト一覧</p>
@@ -33,20 +27,21 @@
                     <div class="mode-pill">BATTLE ROYALE</div>
                 </div>
                 <div class="quest-category-grid">
-                    <a class="quest-category-card weekly" href="quests/br_weekly.html">
-                        <p class="category-title">Weekly Quests</p>
-                        <p class="category-sub">週替わりのチャレンジ</p>
-                        <p class="category-meta">更新: 毎週火曜</p>
+                    <a class="quest-category-card weekly" href="quests/br_weekly.html" style="--quest-cover: url('S39_Weekly.png');">
+                        <p class="category-title">ウィークリーハイライト</p>
+                        <p class="category-meta">終了日: 2026年3月5日</p>
                     </a>
-                    <a class="quest-category-card story" href="quests/br_story.html">
-                        <p class="category-title">Story Quests</p>
-                        <p class="category-sub">シーズン進行</p>
-                        <p class="category-meta">章の展開に連動</p>
+                    <a class="quest-category-card story" href="quests/br_story.html" style="--quest-cover: url('S38_RoadTrip.png');">
+                        <p class="category-title">ウィンターラッシュ</p>
+                        <p class="category-meta">終了日: 未定</p>
                     </a>
-                    <a class="quest-category-card rank" href="quests/br_rank.html">
-                        <p class="category-title">Rank Quests</p>
-                        <p class="category-sub">ランク専用</p>
-                        <p class="category-meta">競技向け報酬</p>
+                    <a class="quest-category-card rank" href="quests/br_rank.html" style="--quest-cover: url('S39_BattleBus.png');">
+                        <p class="category-title">バトルバス</p>
+                        <p class="category-meta">終了日: 未定</p>
+                    </a>
+                    <a class="quest-category-card rank" href="quests/br_rank.html" style="--quest-cover: url('S39_UmbraMolt.png');">
+                        <p class="category-title">ザ・ブレイド</p>
+                        <p class="category-meta">終了日: 未定</p>
                     </a>
                 </div>
             </section>
@@ -59,20 +54,21 @@
                     <div class="mode-pill">RELOAD</div>
                 </div>
                 <div class="quest-category-grid">
-                    <a class="quest-category-card weekly" href="quests/reload_weekly.html">
-                        <p class="category-title">Weekly Quests</p>
-                        <p class="category-sub">短時間で回収</p>
-                        <p class="category-meta">週更新</p>
+                    <a class="quest-category-card weekly" href="quests/br_weekly.html" style="--quest-cover: url('S39_Weekly.png');">
+                        <p class="category-title">ウィークリーハイライト</p>
+                        <p class="category-meta">終了日: 2026年3月5日</p>
                     </a>
-                    <a class="quest-category-card story" href="quests/reload_story.html">
-                        <p class="category-title">Story Quests</p>
-                        <p class="category-sub">ミッション連動</p>
-                        <p class="category-meta">ストーリー完走</p>
+                    <a class="quest-category-card story" href="quests/br_story.html" style="--quest-cover: url('S38_RoadTrip.png');">
+                        <p class="category-title">ウィンターラッシュ</p>
+                        <p class="category-meta">終了日: 未定</p>
                     </a>
-                    <a class="quest-category-card rank" href="quests/reload_rank.html">
-                        <p class="category-title">Rank Quests</p>
-                        <p class="category-sub">ランク報酬</p>
-                        <p class="category-meta">勝利条件あり</p>
+                    <a class="quest-category-card rank" href="quests/br_rank.html" style="--quest-cover: url('S39_BattleBus.png');">
+                        <p class="category-title">バトルバス</p>
+                        <p class="category-meta">終了日: 未定</p>
+                    </a>
+                    <a class="quest-category-card rank" href="quests/br_rank.html" style="--quest-cover: url('S39_UmbraMolt.png');">
+                        <p class="category-title">ザ・ブレイド</p>
+                        <p class="category-meta">終了日: 未定</p>
                     </a>
                 </div>
             </section>
@@ -85,20 +81,21 @@
                     <div class="mode-pill">ORIGIN</div>
                 </div>
                 <div class="quest-category-grid">
-                    <a class="quest-category-card weekly" href="quests/origin_weekly.html">
-                        <p class="category-title">Weekly Quests</p>
-                        <p class="category-sub">探索系が中心</p>
-                        <p class="category-meta">週替わり</p>
+                    <a class="quest-category-card weekly" href="quests/br_weekly.html" style="--quest-cover: url('S39_Weekly.png');">
+                        <p class="category-title">ウィークリーハイライト</p>
+                        <p class="category-meta">終了日: 2026年3月5日</p>
                     </a>
-                    <a class="quest-category-card story" href="quests/origin_story.html">
-                        <p class="category-title">Story Quests</p>
-                        <p class="category-sub">伝承ミッション</p>
-                        <p class="category-meta">章の核心</p>
+                    <a class="quest-category-card story" href="quests/br_story.html" style="--quest-cover: url('S38_RoadTrip.png');">
+                        <p class="category-title">ウィンターラッシュ</p>
+                        <p class="category-meta">終了日: 未定</p>
                     </a>
-                    <a class="quest-category-card rank" href="quests/origin_rank.html">
-                        <p class="category-title">Rank Quests</p>
-                        <p class="category-sub">競技向け</p>
-                        <p class="category-meta">限定XP</p>
+                    <a class="quest-category-card rank" href="quests/br_rank.html" style="--quest-cover: url('S39_BattleBus.png');">
+                        <p class="category-title">バトルバス</p>
+                        <p class="category-meta">終了日: 未定</p>
+                    </a>
+                    <a class="quest-category-card rank" href="quests/br_rank.html" style="--quest-cover: url('S39_UmbraMolt.png');">
+                        <p class="category-title">ザ・ブレイド</p>
+                        <p class="category-meta">終了日: 未定</p>
                     </a>
                 </div>
             </section>
@@ -107,20 +104,7 @@
         </section>
 
 
-        <footer class="footer">
-            <div>
-                <p class="footer-title">FORTNITE INFO</p>
-                <p class="footer-sub">公式情報を分かりやすく、スピーディーに。</p>
-            </div>
-            <div class="footer-links">
-                <a href="Rule.html">利用規約</a>
-                <a href="Privacy.html">プライバシー</a>
-                <a href="Tournament.html">大会情報</a>
-            </div>
-        </footer>
+        <div data-include="includes/footer.html"></div>
+            <script src="assets/js/components.js" defer></script>
     </body>
 </html>
-
-
-
-

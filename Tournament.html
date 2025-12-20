@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap">
+        <title>競技スケジュール | フォートナイト情報アカウント</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body data-page="tournament" data-base="">
+        <div data-include="includes/header.html"></div>
+
+        <main class="page tournament-page">
+            <section class="tournament-hero">
+                <p class="pill">Competitive</p>
+                <h1>競技スケジュール</h1>
+                <p class="lead">日付ごとにまとめた大会カレンダーです。</p>
+            </section>
+
+            <section class="section tournament-today-section">
+                <div class="section-head tournament-tab-head">
+                    <h2>本日の競技</h2>
+                    <p>今日開催される大会をまとめて表示します。</p>
+                </div>
+                <div id="tournament-today" class="tournament-grid tournament-today-grid" aria-live="polite"></div>
+            </section>
+
+            <section class="section">
+                <div class="tournament-filters" id="tournament-filters" aria-label="月で絞り込み"></div>
+                <div id="tournament-list" class="tournament-list" aria-live="polite"></div>
+            </section>
+        </main>
+
+        <section class="ad-section">
+            <div class="ad-slot">広告枠</div>
+        </section>
+
+        <div data-include="includes/footer.html"></div>
+        <script>
+            const list = document.getElementById("tournament-list");
+            const todayList = document.getElementById("tournament-today");
+            const filters = document.getElementById("tournament-filters");
+            const formatDate = (value) => {
+                if (!value) {
+                    return "";
+                }
+                const parts = value.split("-");
+                if (parts.length !== 3) {
+                    return value;
+                }
+                const year = parts[0];
+                const month = Number(parts[1]);
+                const day = Number(parts[2]);
+                if (!year || Number.isNaN(month) || Number.isNaN(day)) {
+                    return value;
+                }
+                return `${year}年${month}月${day}日`;
+            };
+
+            const formatMonth = (value) => {
+                if (!value) {
+                    return "";
+                }
+                const parts = value.split("-");
+                if (parts.length < 2) {
+                    return value;
+                }
+                const year = parts[0];
+                const month = Number(parts[1]);
+                if (!year || Number.isNaN(month)) {
+                    return value;
+                }
+                return `${year}年${month}月`;
+            };
+
+            const formatTime = (start, end) => {
+                if (start && end) {
+                    return `${start} - ${end}`;
+                }
+                if (start) {
+                    return `${start} -`;
+                }
+                return "時間未定";
+            };
+
+            const getTodayKey = () => {
+                const now = new Date();
+                const year = now.getFullYear();
+                const month = String(now.getMonth() + 1).padStart(2, "0");
+                const day = String(now.getDate()).padStart(2, "0");
+                return `${year}-${month}-${day}`;
+            };
+
+            const getTodayStart = () => {
+                const now = new Date();
+                return new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
+            };
+
+            const toMinutes = (timeText) => {
+                if (!timeText) {
+                    return null;
+                }
+                const parts = timeText.split(":");
+                if (parts.length !== 2) {
+                    return null;
+                }
+                const hours = Number(parts[0]);
+                const minutes = Number(parts[1]);
+                if (Number.isNaN(hours) || Number.isNaN(minutes)) {
+                    return null;
+                }
+                return hours * 60 + minutes;
+            };
+
+            const buildCards = (entries) => {
+                if (!entries || entries.length === 0) {
+                    return "<p class=\"tournament-empty\">本日の競技はありません。</p>";
+                }
+                return entries
+                    .map((entry, index) => {
+                        const title = entry.title || "(タイトル未設定)";
+                        const time = formatTime(entry.start, entry.end);
+                        const image = entry.displayPlaylistImage || "";
+                        const cover = image
+                            ? `<img class="tournament-thumb" src="${image}" alt="${title}">`
+                            : `<div class="tournament-thumb tournament-thumb--empty">NO IMAGE</div>`;
+
+                        return `
+                            <article class="tournament-card" style="--card-index:${index}">
+                                ${cover}
+                                <div class="tournament-card-body">
+                                    <p class="tournament-time">${time}</p>
+                                    <h3 class="tournament-title">${title}</h3>
+                                    <div class="tournament-meta">
+                                        <p class="tournament-tag">TOURNAMENT</p>
+                                        <a class="btn ghost tournament-action" href="#">詳細を確認</a>
+                                    </div>
+                                </div>
+                            </article>
+                        `;
+                    })
+                    .join("");
+            };
+
+            if (list) {
+                fetch("assets/data/calendar_by_date.json")
+                    .then((response) => response.json())
+                    .then((data) => {
+                        const rawDates = Array.isArray(data.competitiveDates)
+                            ? data.competitiveDates
+                            : (Array.isArray(data.dates) ? data.dates : []);
+                        const todayKey = getTodayKey();
+                        const now = new Date();
+                        const nowMinutes = now.getHours() * 60 + now.getMinutes();
+                        const dates = rawDates.filter((day) => {
+                            if (!day.date) {
+                                return false;
+                            }
+                            if (day.date > todayKey) {
+                                return true;
+                            }
+                            if (day.date < todayKey) {
+                                return false;
+                            }
+                            return true;
+                        });
+
+                        if (dates.length === 0) {
+                            list.innerHTML = "<p class=\"tournament-empty\">データがまだありません。</p>";
+                            return;
+                        }
+
+                        let activeMonth = "all";
+
+                        const getMonthKey = (value) => {
+                            if (!value) {
+                                return "";
+                            }
+                            const parts = value.split("-");
+                            if (parts.length < 2) {
+                                return value;
+                            }
+                            return `${parts[0]}-${parts[1]}`;
+                        };
+
+                        const months = Array.from(new Set(dates.map((day) => getMonthKey(day.date)).filter(Boolean)));
+
+                        const renderFilters = () => {
+                            if (!filters) {
+                                return;
+                            }
+                            const chips = [
+                                { key: "all", label: "すべて" },
+                                ...months.map((monthKey) => ({ key: monthKey, label: formatMonth(monthKey) })),
+                            ];
+
+                            filters.innerHTML = chips
+                                .map((chip) => {
+                                    const activeClass = chip.key === activeMonth ? " active" : "";
+                                    return `<button class="tournament-filter${activeClass}" data-month="${chip.key}" type="button">${chip.label}</button>`;
+                                })
+                                .join("");
+
+                            Array.from(filters.querySelectorAll(".tournament-filter")).forEach((button) => {
+                                button.addEventListener("click", () => {
+                                    activeMonth = button.dataset.month || "all";
+                                    render();
+                                    renderFilters();
+                                });
+                            });
+                        };
+
+                        const render = () => {
+                            const visibleDates = activeMonth === "all"
+                                ? dates
+                                : dates.filter((day) => getMonthKey(day.date) === activeMonth);
+
+                            if (visibleDates.length === 0) {
+                                list.innerHTML = "<p class=\"tournament-empty\">該当データがありません。</p>";
+                                return;
+                            }
+
+                            list.innerHTML = visibleDates
+                                .map((day) => {
+                                    const dateLabel = formatDate(day.date || "");
+                                    const entries = Array.isArray(day.entries) ? day.entries : [];
+                                    const filteredEntries = day.date === todayKey
+                                        ? entries.filter((entry) => {
+                                            const endMinutes = toMinutes(entry.end);
+                                            if (endMinutes === null) {
+                                                return true;
+                                            }
+                                            return endMinutes >= nowMinutes;
+                                        })
+                                        : entries;
+
+                                    return `
+                                        <section class="tournament-day">
+                                            <div class="tournament-day-head">
+                                                <h2 class="tournament-date">${dateLabel}</h2>
+                                            </div>
+                                            <div class="tournament-grid">
+                                            ${buildCards(filteredEntries)}
+                                            </div>
+                                        </section>
+                                    `;
+                                })
+                                .join("");
+                        };
+
+                        if (todayList) {
+                            const today = dates.find((day) => day.date === todayKey);
+                            const todayEntries = today && Array.isArray(today.entries) ? today.entries : [];
+                            const filteredTodayEntries = todayEntries.filter((entry) => {
+                                const endMinutes = toMinutes(entry.end);
+                                if (endMinutes === null) {
+                                    return true;
+                                }
+                                return endMinutes >= nowMinutes;
+                            });
+                            todayList.innerHTML = buildCards(filteredTodayEntries);
+                        }
+
+                        renderFilters();
+                        render();
+                    })
+                    .catch(() => {
+                        list.innerHTML = "<p class=\"tournament-empty\">読み込みに失敗しました。</p>";
+                    });
+            }
+        </script>
+            <script src="assets/js/components.js" defer></script>
+    </body>
+</html>
