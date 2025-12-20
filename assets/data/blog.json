@@ -1,5 +1,16 @@
 [
   {
+    "id": "post-003",
+    "title": "OGショップが復活！",
+    "date": "2025-12-18",
+    "publishAt": "2025-12-20T10:41+09:00",
+    "category": "シーズン",
+    "excerpt": "懐かしのアイテムが再登場",
+    "cover": "assets/img/blog/post-003/fortnite-og-season-shop-header-1900x600-2b91cff1f0ee.webp",
+    "path": "blog/posts/post-003/4b41cab3fa320089f719e18f4d90ad86.html",
+    "tags": ["OG", "Epic"]
+  },
+  {
     "id": "post-002",
     "title": "ウィンターフェスト 2025",
     "date": "2025-12-18",
@@ -8,7 +19,7 @@
     "excerpt": "スピリットを感じよう！",
     "cover": "https://fn-creator-community-cdn.qstv.on.epicgames.com/2a75835a-768c-483f-a16d-9f39612c1d25/post-image-block_1024x576.webp",
     "path": "blog/posts/post-002/633e1f5522e3dadfe84e181d3492f2fd.html",
-    "tags": ["BR", "Epic", "Reload"]
+    "tags": ["BR", "Epic"]
   },
   {
     "id": "post-001",
