@@ -952,7 +952,6 @@ a {
 /* Quest hub */
 .quests-page {
   position: relative;
-  --quest-character: url("../img/T_UI_AthenaSoldiers_SurgeRaven_Pack_Quests.png");
 }
 
 
@@ -1074,11 +1073,13 @@ a {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
   border: 5px solid rgba(255, 255, 255, 1);
+  --quest-cover: none;
+  --quest-banner-bg: linear-gradient(135deg, rgba(15, 23, 42, 0.2), rgba(15, 23, 42, 0.6));
   background-image: linear-gradient(180deg, rgba(8, 12, 24, 0.1), rgba(8, 12, 24, 0.85)),
-                    var(--quest-character),
-                    var(--quest-cover, linear-gradient(135deg, rgba(15, 23, 42, 0.2), rgba(15, 23, 42, 0.6)));
+                    var(--quest-cover),
+                    var(--quest-banner-bg);
   background-size: cover, 25% auto, cover;
-  background-position: center, right 6% top, center;
+  background-position: center, right 6% center, center;
   background-repeat: no-repeat;
 }
 
@@ -1111,15 +1112,15 @@ a {
 }
 
 .quest-category-card.weekly {
-  --quest-cover: linear-gradient(135deg, #312e81, #7c3aed);
+  --quest-banner-bg: linear-gradient(135deg, #312e81, #7c3aed);
 }
 
 .quest-category-card.story {
-  --quest-cover: linear-gradient(135deg, #0f172a, #0ea5e9);
+  --quest-banner-bg: linear-gradient(135deg, #0f172a, #0ea5e9);
 }
 
 .quest-category-card.rank {
-  --quest-cover: linear-gradient(135deg, #78350f, #f59e0b);
+  --quest-banner-bg: linear-gradient(135deg, #78350f, #f59e0b);
 }
 
 .category-title {

@@ -3,6 +3,7 @@
   "title": "ウィークリーハイライト",
   "expires": "終了: 2026年3月5日 午後6時00分まで",
   "bannerImage": "assets/img/T_UI_BattleBus_Quests.png",
+  "bannerBg": "linear-gradient(90deg, #172194, #6E45D1)",
   "bannerAlt": "クエストキャラクター",
   "currentWeek": 3,
   "weeks": [
