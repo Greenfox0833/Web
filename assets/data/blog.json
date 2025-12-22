@@ -1,10 +1,21 @@
 [
   {
+    "id": "post-004",
+    "title": "ウィンター中尉のパワーアワー",
+    "date": "2025-12-20",
+    "publishAt": "2025-12-20T10:41+09:00",
+    "category": "イベント",
+    "excerpt": "ウィンター中尉からの通信を受信中",
+    "cover": "../../../assets/img/blog/post-004/fa1c93636e6f1e39a6d4549553c1ce4f.png",
+    "path": "blog/posts/post-004/80a4b21343c6cfdfc9a6464af8695c0d.html",
+    "tags": ["BR", "Epic"]
+  },
+  {
     "id": "post-003",
     "title": "OGショップが復活！",
     "date": "2025-12-20",
     "publishAt": "2025-12-20T10:41+09:00",
-    "category": "シーズン",
+    "category": "アイテムショップ",
     "excerpt": "懐かしのアイテムが再登場",
     "cover": "../../../assets/img/blog/post-003/fortnite-og-season-shop-header-1900x600-2b91cff1f0ee.webp",
     "path": "blog/posts/post-003/4b41cab3fa320089f719e18f4d90ad86.html",

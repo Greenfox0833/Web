@@ -1,0 +1,66 @@
+﻿{
+  "layout": "weekly",
+  "title": "ザ・ブライド",
+  "expires": "終了: 2026年3月5日 午後6時00分まで",
+  "bannerBg": "linear-gradient(90deg, #863449, #DD8181)",
+  "bannerImage": "assets/img/T_UI_AthenaSoldiers_SurgeRaven_Pack_Quests.png",
+  "bannerAlt": "クエストキャラクター",
+  "currentWeek": 3,
+  "weeks": [
+    {
+      "week": 1,
+      "label": "ザ・ブライド クエスト",
+      "tasks": [
+        {
+          "title": "乗り物に乗った状態で複数の名前付きのエリアを訪れる (6)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "破られた誓いの裂け目のゲートに入って、破られた誓いの刀を入手する (1)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "破られた誓いの裂け目のゲートから入ってゴーゴーとユキを倒す (2)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "破られた誓いの刀で敵を撃破する (10)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "破られた誓いの刀を使って復讐の突進を敵に命中させる (6)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "複数のマッチで最後のプレイヤー25人に残る (4)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ザ・ブライドからサービスを購入する (1)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    }
+  ]
+}

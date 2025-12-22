@@ -8,7 +8,7 @@ let filteredPosts = [];
 let currentPage = 1;
 let tagMap = {};
 let activeTag = "all";
-const featuredPostId = "post-003";
+const featuredPostId = "post-004";
 
 const normalizeDateTime = (value) => {
   if (typeof value !== "string") {
@@ -266,4 +266,3 @@ if (filters) {
     filters.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 }
-

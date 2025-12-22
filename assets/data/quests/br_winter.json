@@ -1,0 +1,105 @@
+﻿{
+  "layout": "weekly",
+  "title": "ウィンターフェスト",
+  "expires": "終了: 2026年1月5日 午後11時00分まで",
+  "bannerBg": "linear-gradient(90deg, #172194, #6E45D1)",
+  "bannerImage": "assets/img/T_UI_AthenaSoldiers_RosyChuckle_Quests.png",
+  "bannerAlt": "クエストキャラクター",
+  "currentWeek": 2,
+  "weeks": [
+    {
+      "week": 1,
+      "label": "星への贈り物",
+      "tasks": [
+        {
+          "title": "宝箱から最高のプレゼントを収集する (1)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "いずれかのキャラクターに最高のプレゼントを届ける (1)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ユールトルーパーかその他のボスにダメージを与える (500)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "label": "プレゼントにかける情熱",
+      "tasks": [
+        {
+          "title": "ザ・ブライド、カーター・ウー、またはキングストンに最高のプレゼントを届ける (6)",
+          "start": "2025-12-20T23:00:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "足が凍った状態で一定距離を移動する (60)",
+          "start": "2025-12-20T23:00:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "クロージー・ロッジかティップトップ・テラスで宝箱を開ける (5)",
+          "start": "2025-12-20T23:00:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "label": "贈り物はそこに",
+      "tasks": [
+        {
+          "title": "マーティ・マクフライ、ヒロイック ホープ、またはカリーナに最高のプレゼントを届ける (1)",
+          "start": "2025-12-23T23:00:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "Whiplashタイムマシンで88マイル/時の速度を維持する (1)",
+          "start": "2025-12-23T23:00:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "スノーボールランチャーまたはブリザードグレネードで敵にダメージを与える (200)",
+          "start": "2025-12-23T23:00:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "label": "中尉の小さな助っ人",
+      "tasks": [
+        {
+          "title": "ウィンター中尉を探し、最高のプレゼントを届ける (1)",
+          "start": "2025-12-26T23:00:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    }
+  ]
+}

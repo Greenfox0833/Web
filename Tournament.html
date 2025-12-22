@@ -31,6 +31,59 @@
             </section>
         </main>
 
+        <div class="tournament-modal" id="tournament-modal" aria-hidden="true">
+            <div class="tournament-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="tournament-modal-title">
+                <button class="tournament-modal-close" type="button" data-modal-close aria-label="モーダルを閉じる">×</button>
+                <div class="tournament-modal-layout">
+                    <div class="tournament-modal-media is-hidden">
+                        <img id="tournament-modal-poster" class="tournament-modal-poster" alt="">
+                    </div>
+                    <div class="tournament-modal-content">
+                        <h2 class="tournament-modal-title" id="tournament-modal-title">大会詳細</h2>
+                        <p class="tournament-modal-time" id="tournament-modal-time"></p>
+                        <div class="tournament-modal-segments" id="tournament-modal-segments" aria-label="報酬セグメント"></div>
+                        <div class="tournament-modal-grid">
+                            <div class="tournament-modal-item tournament-modal-item--auto">
+                                <h3>参加プラットフォーム</h3>
+                                <div id="tournament-modal-platforms" class="tournament-modal-list">-</div>
+                            </div>
+                            <div class="tournament-modal-item tournament-modal-item--auto">
+                                <h3>参加要件</h3>
+                                <div id="tournament-modal-rank" class="tournament-modal-text">-</div>
+                            </div>
+                            <div class="tournament-modal-item tournament-modal-item--wide tournament-modal-item--switch">
+                                <div class="tournament-top-tabs" role="tablist" aria-label="報酬とポイント">
+                                    <button class="tournament-top-tab is-active" type="button" data-top-tab="reward">報酬</button>
+                                    <button class="tournament-top-tab" type="button" data-top-tab="points">ポイント</button>
+                                </div>
+                                <div id="tournament-top-panels" class="tournament-top-panels" data-active="reward">
+                                    <div class="tournament-top-panel" data-top-panel="reward">
+                                        <h3>報酬</h3>
+                                        <div id="tournament-reward-tabs" class="tournament-reward-tabs" role="tablist" aria-label="報酬カテゴリ">
+                                            <button class="tournament-reward-tab is-active" type="button" data-reward-tab="points">ポイント報酬</button>
+                                            <button class="tournament-reward-tab" type="button" data-reward-tab="rank">順位報酬</button>
+                                            <button class="tournament-reward-tab" type="button" data-reward-tab="percent">パーセント報酬</button>
+                                        </div>
+                                        <div id="tournament-modal-reward" class="tournament-modal-reward" data-active="points">-</div>
+                                    </div>
+                                    <div class="tournament-top-panel" data-top-panel="points">
+                                        <h3>ポイント</h3>
+                                        <div id="tournament-modal-points" class="tournament-modal-text">-</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="reward-lightbox" id="reward-lightbox" aria-hidden="true">
+            <div class="reward-lightbox-dialog" role="dialog" aria-modal="true" aria-label="報酬画像">
+                <button class="reward-lightbox-close" type="button" aria-label="画像を閉じる">×</button>
+                <img class="reward-lightbox-image" id="reward-lightbox-image" alt="">
+            </div>
+        </div>
+
         <section class="ad-section">
             <div class="ad-slot">広告枠</div>
         </section>
@@ -40,6 +93,55 @@
             const list = document.getElementById("tournament-list");
             const todayList = document.getElementById("tournament-today");
             const filters = document.getElementById("tournament-filters");
+            const modal = document.getElementById("tournament-modal");
+            const modalTitle = document.getElementById("tournament-modal-title");
+            const modalTime = document.getElementById("tournament-modal-time");
+            const modalPoster = document.getElementById("tournament-modal-poster");
+            const modalMedia = document.querySelector(".tournament-modal-media");
+            const modalLayout = document.querySelector(".tournament-modal-layout");
+            const modalPlatforms = document.getElementById("tournament-modal-platforms");
+            const modalRank = document.getElementById("tournament-modal-rank");
+            const rewardLightbox = document.getElementById("reward-lightbox");
+            const rewardLightboxImage = document.getElementById("reward-lightbox-image");
+            const rewardLightboxClose = document.querySelector(".reward-lightbox-close");
+            const topTabs = document.querySelector(".tournament-top-tabs");
+            const topPanels = document.getElementById("tournament-top-panels");
+            const modalReward = document.getElementById("tournament-modal-reward");
+            const rewardTabs = document.getElementById("tournament-reward-tabs");
+            const modalPoints = document.getElementById("tournament-modal-points");
+            const modalSegments = document.getElementById("tournament-modal-segments");
+            const entryStore = new Map();
+            let entrySeed = 0;
+            let activeEntry = null;
+            const disableMobileModal = true;
+            const mediaData = {
+                platformImages: {},
+                rewardImages: {},
+                rewardLabels: {},
+                hiddenRewardTokens: [],
+                tokenLabels: {},
+                requirementTokenLabels: {},
+                rankImages: {},
+            };
+            const detailData = {
+                detailsById: new Map(),
+                payoutTables: {},
+                scoringRuleSets: {},
+            };
+            const fallbackImage = "assets/img/Comp/220b237f529aae0c844d17c042a45082.png";
+
+            fetch("assets/data/tournament_media.json")
+                .then((response) => response.json())
+                .then((data) => {
+                    mediaData.platformImages = data && data.platformImages ? data.platformImages : {};
+                    mediaData.rewardImages = data && data.rewardImages ? data.rewardImages : {};
+                    mediaData.rewardLabels = data && data.rewardLabels ? data.rewardLabels : {};
+                    mediaData.hiddenRewardTokens = data && data.hiddenRewardTokens ? data.hiddenRewardTokens : [];
+                    mediaData.tokenLabels = data && data.tokenLabels ? data.tokenLabels : {};
+                    mediaData.requirementTokenLabels = data && data.requirementTokenLabels ? data.requirementTokenLabels : {};
+                    mediaData.rankImages = data && data.rankImages ? data.rankImages : {};
+                })
+                .catch(() => {});
             const formatDate = (value) => {
                 if (!value) {
                     return "";
@@ -83,6 +185,897 @@
                 return "時間未定";
             };
 
+            const platformLabelMap = {
+                XboxOneGDK: "Xbox One",
+                XB1: "Xbox One",
+                XboxOne: "Xbox One",
+                XSX: "Xbox Series X|S",
+                PS4: "PS4",
+                PS5: "PS5",
+                Switch: "Switch",
+                Switch2: "Switch 2",
+                Windows: "Windows",
+                Mac: "Mac",
+                IOS: "iOS",
+                Android: "Android",
+                XCloud: "Xbox Cloud Gaming",
+                XCloudMobile: "Xbox Cloud Gaming Mobile",
+                GFN: "GeForce Now",
+                GFNMobile: "GeForce Now Mobile",
+                Luna: "Amazon Luna",
+                LunaMobile: "Amazon Luna Mobile",
+                Helios: "Helios",
+                HeliosMobile: "Helios Mobile",
+            };
+            const platformGroupMap = {
+                PS4: "PS",
+                PS5: "PS",
+                IOS: "MOBILE",
+                Android: "MOBILE",
+                Switch: "SWITCH",
+                Switch2: "SWITCH",
+            };
+            const platformGroupLabelMap = {
+                PS: "PlayStation",
+                MOBILE: "Mobile",
+                SWITCH: "Switch",
+            };
+            const platformGroupIconMap = {
+                PS: "PS5",
+                MOBILE: "IOS",
+                SWITCH: "Switch",
+            };
+
+            const renderIconListItems = (items, getLabel, getImage, emptyText) => {
+                if (!Array.isArray(items) || items.length === 0) {
+                    return `<p class="tournament-modal-empty">${emptyText}</p>`;
+                }
+                return items
+                    .map((item) => {
+                        const label = getLabel(item);
+                        const image = getImage(item) || fallbackImage;
+                        const icon = `<img class="tournament-chip-icon" src="${image}" alt="${label}" onerror="this.onerror=null;this.src='${fallbackImage}';">`;
+                        return `<span class="tournament-chip">${icon}<span class="tournament-chip-text">${label}</span></span>`;
+                    })
+                    .join("");
+            };
+
+            const wrapIconList = (innerHtml) => `<div class="tournament-modal-list-inner">${innerHtml}</div>`;
+
+            const renderPlatforms = (platforms) => {
+                if (!Array.isArray(platforms) || platforms.length === 0) {
+                    return `<p class="tournament-modal-empty">指定なし</p>`;
+                }
+                const groups = platforms.map((platform) => platformGroupMap[platform] || platform);
+                const unique = Array.from(new Set(groups));
+                return wrapIconList(renderIconListItems(
+                    unique,
+                    (group) => platformGroupLabelMap[group] || platformLabelMap[group] || group,
+                    (group) => {
+                        const code = platformGroupIconMap[group] || group;
+                        return mediaData.platformImages[code] || "";
+                    },
+                    "指定なし"
+                ));
+            };
+
+            const rankRanges = [
+                { min: 0, max: 2, label: "ブロンズ", roman: ["Ⅰ", "Ⅱ", "Ⅲ"] },
+                { min: 3, max: 5, label: "シルバー", roman: ["Ⅰ", "Ⅱ", "Ⅲ"] },
+                { min: 6, max: 8, label: "ゴールド", roman: ["Ⅰ", "Ⅱ", "Ⅲ"] },
+                { min: 9, max: 11, label: "プラチナ", roman: ["Ⅰ", "Ⅱ", "Ⅲ"] },
+                { min: 12, max: 14, label: "ダイヤモンド", roman: ["Ⅰ", "Ⅱ", "Ⅲ"] },
+                { min: 15, max: 15, label: "エリート", roman: [""] },
+                { min: 16, max: 16, label: "チャンピオン", roman: [""] },
+                { min: 17, max: 17, label: "アンリアル", roman: [""] },
+            ];
+
+            const getRankTierLabel = (levelValue, isRankCup) => {
+                const level = Number(levelValue);
+                if (!Number.isFinite(level)) {
+                    return "条件あり";
+                }
+                const range = rankRanges.find((item) => level >= item.min && level <= item.max);
+                if (!range) {
+                    return "条件あり";
+                }
+                const topLabel = rankRanges[rankRanges.length - 1].label;
+                if (!range.roman || range.roman.length <= 1 || range.roman[0] === "") {
+                    return isRankCup ? range.label : `${range.label}～${topLabel}`;
+                }
+                const first = range.roman[0];
+                const last = range.roman[range.roman.length - 1];
+                if (isRankCup) {
+                    return `${range.label}${first}～${last}`;
+                }
+                return `${range.label}${first}～${topLabel}`;
+            };
+
+            const getRankBandLabelFromKey = (payoutKey) => {
+                if (!payoutKey) {
+                    return "";
+                }
+                const label = formatSegmentLabel(payoutKey);
+                const range = rankRanges.find((item) => item.label === label);
+                if (!range) {
+                    return "";
+                }
+                if (!range.roman || range.roman.length <= 1 || range.roman[0] === "") {
+                    return range.label;
+                }
+                const first = range.roman[0];
+                const last = range.roman[range.roman.length - 1];
+                return `${range.label}${first}～${last}`;
+            };
+
+            const formatRequirementTokenLabel = (value) => {
+                if (!value) {
+                    return "";
+                }
+                const id = normalizeRewardId(value);
+                return mediaData.requirementTokenLabels[id] || "";
+            };
+
+            const getRequirementTokens = (entry) => {
+                if (!entry || !Array.isArray(entry.requireAllTokens)) {
+                    return [];
+                }
+                const tokens = [];
+                entry.requireAllTokens.forEach((item) => {
+                    if (!item) {
+                        return;
+                    }
+                    if (typeof item === "string") {
+                        tokens.push(item);
+                        return;
+                    }
+                    if (Array.isArray(item.requireAllTokens)) {
+                        item.requireAllTokens.forEach((token) => {
+                            if (token) {
+                                tokens.push(token);
+                            }
+                        });
+                        return;
+                    }
+                    if (typeof item.requireAllTokens === "string") {
+                        tokens.push(item.requireAllTokens);
+                    }
+                });
+                return tokens;
+            };
+
+            const getRequiredRankData = (entry, payoutKey) => {
+                const requirements = Array.isArray(entry.additionalRequirements)
+                    ? entry.additionalRequirements.reduce((list, value) => {
+                        if (Array.isArray(value)) {
+                            return list.concat(value);
+                        }
+                        list.push(value);
+                        return list;
+                    }, [])
+                    : [];
+                const tokenText = getRequirementTokens(entry)
+                    .map((value) => formatRequirementTokenLabel(value))
+                    .filter(Boolean)
+                    .join(" / ");
+                if (tokenText) {
+                    return {
+                        tabs: [],
+                        content: tokenText,
+                    };
+                }
+                const modeMap = {
+                    "ranked-br": "バトルロイヤル",
+                    "ranked-zb": "ゼロビルド",
+                    "ranked_blastberry_build": "リロード",
+                    "ranked_blastberry_nobuild": "リロード（ZB）",
+                };
+                const rankItems = requirements
+                    .filter((value) => typeof value === "string" && value.startsWith("currentRanking:"))
+                    .map((value) => {
+                        const parts = value.split(":");
+                        return {
+                            mode: parts[1] || "",
+                            level: parts[2],
+                        };
+                    });
+                if (rankItems.length === 0) {
+                    if (entry.minimumAccountLevel) {
+                        return {
+                            tabs: [],
+                            content: `アカウントレベル ${entry.minimumAccountLevel}+`,
+                        };
+                    }
+                    return {
+                        tabs: [],
+                        content: "指定なし",
+                    };
+                }
+                const isRankCup = typeof entry.title === "string" && entry.title.includes("ランクカップ");
+                const overrideRank = isRankCup ? getRankBandLabelFromKey(payoutKey) : "";
+                const unique = new Map();
+                rankItems.forEach((item) => {
+                    const label = modeMap[item.mode] || item.mode;
+                    if (!unique.has(label)) {
+                        const rankLabel = overrideRank || getRankTierLabel(item.level, isRankCup);
+                        unique.set(label, rankLabel);
+                    }
+                });
+                const tabs = Array.from(unique.entries()).map(([label, rank]) => ({
+                    key: label,
+                    label,
+                    rank,
+                }));
+                return { tabs, tokenText };
+            };
+
+            const getDetailsForEntry = (entry) => {
+                if (!entry || !entry.detailsId) {
+                    return null;
+                }
+                return detailData.detailsById.get(entry.detailsId) || null;
+            };
+
+            const getPayoutTables = (details, payoutKey) => {
+                const payoutTables = detailData.payoutTables || {};
+                const payoutIds = Array.isArray(details && details.payoutTableIds) ? details.payoutTableIds : [];
+                const selected = payoutKey ? payoutIds.filter((id) => id === payoutKey) : payoutIds;
+                const result = {};
+                selected.forEach((id) => {
+                    if (payoutTables[id]) {
+                        result[id] = payoutTables[id];
+                    }
+                });
+                return result;
+            };
+
+            const normalizeRewardId = (value) => {
+                if (typeof value !== "string") {
+                    return String(value);
+                }
+                if (value.includes(":")) {
+                    return value.split(":").pop();
+                }
+                return value;
+            };
+
+            const isHiddenReward = (value) => {
+                const hidden = mediaData.hiddenRewardTokens;
+                if (!Array.isArray(hidden) || hidden.length === 0) {
+                    return false;
+                }
+                if (value === undefined || value === null) {
+                    return false;
+                }
+                const raw = typeof value === "string" ? value : String(value);
+                const id = normalizeRewardId(value);
+                return hidden.includes(raw) || hidden.includes(id);
+            };
+
+            const formatRewardCondition = (scoringType, threshold) => {
+                if (scoringType === "percentile") {
+                    const percent = Math.round(Number(threshold) * 1000) / 10;
+                    return `上位${percent}%`;
+                }
+                if (scoringType === "rank") {
+                    return `${threshold}位以内`;
+                }
+                if (threshold === undefined || threshold === null || threshold === "") {
+                    return "ポイント";
+                }
+                return `${threshold}ポイント`;
+            };
+
+            const formatRewardLabel = (value, quantity) => {
+                if (isHiddenReward(value)) {
+                    return "";
+                }
+                const id = normalizeRewardId(value);
+                if (id === "USD") {
+                    if (quantity === undefined || quantity === null || quantity === "") {
+                        return "ドル";
+                    }
+                    return `${quantity} ドル`;
+                }
+                const tokenLabel = mediaData.tokenLabels[id];
+                const base = tokenLabel || mediaData.rewardLabels[id] || id;
+                if (quantity && quantity !== 1) {
+                    return `${base} x${quantity}`;
+                }
+                return base;
+            };
+
+            const collectRewardsByType = (entry, payoutKey) => {
+                const result = {
+                    points: [],
+                    rank: [],
+                    percent: [],
+                };
+                const details = getDetailsForEntry(entry);
+                if (!details) {
+                    return result;
+                }
+                const payoutTables = getPayoutTables(details, payoutKey);
+                const rankThresholdMap = new Map();
+
+                Object.values(payoutTables).forEach((groups) => {
+                    if (!Array.isArray(groups)) {
+                        return;
+                    }
+                    groups.forEach((group) => {
+                        if (!group || !Array.isArray(group.ranks)) {
+                            return;
+                        }
+                        const scoringType = group.scoringType || "value";
+                        group.ranks.forEach((rank) => {
+                            if (!rank || !Array.isArray(rank.payouts)) {
+                                return;
+                            }
+                            rank.payouts.forEach((payout) => {
+                                const label = formatRewardLabel(payout && payout.value, payout && payout.quantity);
+                                if (!label) {
+                                    return;
+                                }
+                                const id = normalizeRewardId(payout && payout.value);
+                                const image = mediaData.rewardImages[id] || "";
+                                if (scoringType === "rank") {
+                                    const rankValue = Number(rank.threshold);
+                                    if (!Number.isFinite(rankValue)) {
+                                        return;
+                                    }
+                                    if (!rankThresholdMap.has(rankValue)) {
+                                        rankThresholdMap.set(rankValue, []);
+                                    }
+                                    rankThresholdMap.get(rankValue).push({ label, image, id });
+                                    return;
+                                }
+                                const condition = formatRewardCondition(scoringType, rank.threshold);
+                                const typeKey = scoringType === "percentile" ? "percent" : "points";
+                                result[typeKey].push({
+                                    text: `${condition}：${label}`,
+                                    image,
+                                    id,
+                                });
+                            });
+                        });
+                    });
+                });
+
+                const thresholds = Array.from(rankThresholdMap.keys()).sort((a, b) => a - b);
+                let prevThreshold = 0;
+                const rankRanges = [];
+                thresholds.forEach((threshold) => {
+                    const rangeStart = prevThreshold + 1;
+                    const rangeEnd = threshold;
+                    if (rangeStart > rangeEnd) {
+                        prevThreshold = Math.max(prevThreshold, threshold);
+                        return;
+                    }
+                    const rewards = rankThresholdMap.get(threshold) || [];
+                    rewards.forEach((reward) => {
+                        rankRanges.push({
+                            start: rangeStart,
+                            end: rangeEnd,
+                            label: reward.label,
+                            image: reward.image,
+                        });
+                    });
+                    prevThreshold = Math.max(prevThreshold, threshold);
+                });
+
+                rankRanges.sort((a, b) => {
+                    if (a.start !== b.start) {
+                        return a.start - b.start;
+                    }
+                    if (a.end !== b.end) {
+                        return a.end - b.end;
+                    }
+                    return a.label.localeCompare(b.label);
+                });
+
+                const mergedRanges = [];
+                rankRanges.forEach((range) => {
+                    const last = mergedRanges[mergedRanges.length - 1];
+                    if (
+                        last &&
+                        last.label === range.label &&
+                        last.image === range.image &&
+                        last.id === range.id &&
+                        last.end + 1 === range.start
+                    ) {
+                        last.end = range.end;
+                        return;
+                    }
+                    mergedRanges.push({ ...range });
+                });
+
+                result.rank = mergedRanges.map((range) => {
+                    const rangeLabel = range.start === range.end
+                        ? `${range.end}位`
+                        : `${range.start}～${range.end}位`;
+                    return {
+                        text: `${rangeLabel}：${range.label}`,
+                        image: range.image,
+                        id: range.id,
+                    };
+                });
+
+                if (Array.isArray(entry.rewardTiers)) {
+                    entry.rewardTiers.forEach((tier) => {
+                        if (!tier || tier.value === undefined) {
+                            return;
+                        }
+                        const condition = formatRewardCondition("value", tier.keyValue || "");
+                        const label = formatRewardLabel(tier.value, tier.quantity);
+                        if (!label) {
+                            return;
+                        }
+                        const id = normalizeRewardId(tier.value);
+                        result.points.push({
+                            text: `${condition}：${label}`,
+                            image: mediaData.rewardImages[id] || "",
+                            id,
+                        });
+                    });
+                }
+
+                return result;
+            };
+
+            const renderRewardPills = (items) => {
+                if (!Array.isArray(items) || items.length === 0) {
+                    return "";
+                }
+                return items
+                    .map((item) => {
+                        if (item.image) {
+                            return `
+                                <div class="tournament-reward-pill">
+                                    <span class="tournament-reward-icon-wrap">
+                                        <img class="tournament-reward-icon" src="${item.image}" data-full="${item.image}" alt="" onerror="this.onerror=null;this.parentElement.remove();">
+                                    </span>
+                                    <span class="tournament-reward-text">${item.text}</span>
+                                </div>
+                            `;
+                        }
+                        return `
+                            <div class="tournament-reward-pill tournament-reward-pill--plain">
+                                <span class="tournament-reward-text">${item.text}</span>
+                            </div>
+                        `;
+                    })
+                    .join("");
+            };
+
+            const renderRewards = (entry, payoutKey) => {
+                const rewards = collectRewardsByType(entry, payoutKey);
+                const panels = [
+                    { key: "points", title: "ポイント報酬", items: rewards.points },
+                    { key: "rank", title: "順位報酬", items: rewards.rank },
+                    { key: "percent", title: "パーセント報酬", items: rewards.percent },
+                ].filter((panel) => Array.isArray(panel.items) && panel.items.length > 0);
+                return {
+                    keys: panels.map((panel) => panel.key),
+                    html: panels
+                    .map((panel) => `
+                        <section class="tournament-reward-panel" data-reward-panel="${panel.key}">
+                            <p class="tournament-reward-title">${panel.title}</p>
+                            <div class="tournament-reward-list">
+                                ${renderRewardPills(panel.items)}
+                            </div>
+                        </section>
+                    `)
+                    .join("")
+                };
+            };
+
+            const getRankKeyFromPayoutId = (payoutKey) => {
+                if (!payoutKey) {
+                    return "";
+                }
+                return payoutKey.split("_").pop() || "";
+            };
+
+            const matchRankKey = (value, rankKey) => {
+                if (!value || !rankKey) {
+                    return false;
+                }
+                const lowerValue = value.toLowerCase();
+                const lowerKey = rankKey.toLowerCase();
+                return lowerValue.includes(`_${lowerKey}_`) || lowerValue.endsWith(`_${lowerKey}`);
+            };
+
+            const getScoringRuleSets = (details, rankKey) => {
+                const scoringRuleSets = detailData.scoringRuleSets || {};
+                const ruleIds = Array.isArray(details && details.scoringRuleSetIds) ? details.scoringRuleSetIds : [];
+                const filtered = rankKey ? ruleIds.filter((id) => matchRankKey(id, rankKey)) : [];
+                const selected = filtered.length > 0 ? filtered : ruleIds;
+                const result = {};
+                selected.forEach((id) => {
+                    if (scoringRuleSets[id]) {
+                        result[id] = scoringRuleSets[id];
+                    }
+                });
+                return result;
+            };
+
+            const formatRuleType = (trackedStat) => {
+                const stat = String(trackedStat || "").toLowerCase();
+                if (stat.includes("placement")) {
+                    return "順位";
+                }
+                if (stat.includes("elim")) {
+                    return "撃破";
+                }
+                return "条件";
+            };
+
+            const collectPointsItems = (entry, payoutKey) => {
+                const details = getDetailsForEntry(entry);
+                if (!details) {
+                    return [];
+                }
+                const rankKey = getRankKeyFromPayoutId(payoutKey);
+                const scoringRuleSets = getScoringRuleSets(details, rankKey);
+                const points = [];
+                Object.values(scoringRuleSets).forEach((rules) => {
+                    if (!Array.isArray(rules)) {
+                        return;
+                    }
+                    rules.forEach((rule) => {
+                        if (!rule || !Array.isArray(rule.rewardTiers)) {
+                            return;
+                        }
+                        const typeLabel = formatRuleType(rule.trackedStat);
+                        const unit = typeLabel === "撃破" ? "撃破" : "位";
+                        rule.rewardTiers.forEach((tier) => {
+                            if (tier.keyValue === undefined || tier.pointsEarned === undefined) {
+                                return;
+                            }
+                            const keyValue = tier.keyValue;
+                            const label = typeLabel === "条件"
+                                ? `${keyValue}`
+                                : `${keyValue}${unit}`;
+                            points.push({
+                                key: Number(keyValue),
+                                unit,
+                                text: `${label}：${tier.pointsEarned}ポイント`,
+                            });
+                        });
+                    });
+                });
+                return points.sort((a, b) => (a.key || 0) - (b.key || 0));
+            };
+
+            const renderPoints = (entry, payoutKey) => {
+                const items = collectPointsItems(entry, payoutKey);
+                if (items.length === 0) {
+                    return `<p class="tournament-modal-empty">情報なし</p>`;
+                }
+                const rankItems = items.filter((item) => item.unit === "位");
+                const countItems = items.filter((item) => item.unit === "撃破").slice(0, 1);
+                const renderList = (list) => list
+                    .map((item) => `
+                        <div class="tournament-reward-pill tournament-reward-pill--plain">
+                            <span class="tournament-reward-text">${item.text}</span>
+                        </div>
+                    `)
+                    .join("");
+                return `
+                    <div class="tournament-points-grid">
+                        <div class="tournament-points-rank">
+                            ${renderList(rankItems)}
+                        </div>
+                        <div class="tournament-points-count">
+                            ${renderList(countItems)}
+                        </div>
+                    </div>
+                `;
+            };
+
+            const getAvailableRewardTabs = () => {
+                if (!rewardTabs) {
+                    return [];
+                }
+                return Array.from(rewardTabs.querySelectorAll(".tournament-reward-tab"))
+                    .map((button) => button.dataset.rewardTab || "")
+                    .filter(Boolean);
+            };
+
+            const setRewardTab = (key, availableKeys = []) => {
+                if (!modalReward || !rewardTabs) {
+                    return;
+                }
+                const keys = availableKeys.length > 0 ? availableKeys : getAvailableRewardTabs();
+                const fallback = keys.length > 0 ? keys[0] : "points";
+                const normalized = (key && keys.includes(key)) ? key : fallback;
+                modalReward.dataset.active = normalized;
+                rewardTabs.querySelectorAll(".tournament-reward-tab").forEach((button) => {
+                    button.classList.toggle("is-active", button.dataset.rewardTab === normalized);
+                });
+            };
+
+            const getRewardTab = () => {
+                if (!modalReward) {
+                    return "points";
+                }
+                return modalReward.dataset.active || "points";
+            };
+
+            const rewardTabLabels = {
+                points: "ポイント報酬",
+                rank: "順位報酬",
+                percent: "パーセント報酬",
+            };
+
+            const renderRewardTabs = (keys) => {
+                if (!rewardTabs) {
+                    return;
+                }
+                rewardTabs.innerHTML = keys
+                    .map((key) => `<button class="tournament-reward-tab" type="button" data-reward-tab="${key}">${rewardTabLabels[key] || key}</button>`)
+                    .join("");
+            };
+
+            const updateTopTabs = (rewardKeys) => {
+                if (!topTabs || !topPanels) {
+                    return;
+                }
+                const hasRewards = Array.isArray(rewardKeys) && rewardKeys.length > 0;
+                const wasHidden = topTabs.classList.contains("is-hidden");
+                topTabs.classList.toggle("is-hidden", !hasRewards);
+                if (!hasRewards) {
+                    setTopTab("points");
+                    return;
+                }
+                if (wasHidden) {
+                    setTopTab("reward");
+                }
+            };
+
+            const setTopTab = (key) => {
+                if (!topTabs || !topPanels) {
+                    return;
+                }
+                const normalized = key || "reward";
+                topPanels.dataset.active = normalized;
+                topTabs.querySelectorAll(".tournament-top-tab").forEach((button) => {
+                    button.classList.toggle("is-active", button.dataset.topTab === normalized);
+                });
+            };
+
+            const setModalText = (element, text) => {
+                if (!element) {
+                    return;
+                }
+                element.textContent = "";
+                const span = document.createElement("span");
+                span.className = "tournament-modal-text-inner";
+                span.textContent = text;
+                element.appendChild(span);
+            };
+
+            const renderRequiredRank = (entry, payoutKey) => {
+                const rankData = getRequiredRankData(entry, payoutKey);
+                const rankIconBaseMap = {
+                    "ブロンズ": "Bronze",
+                    "シルバー": "Silver",
+                    "ゴールド": "Gold",
+                    "プラチナ": "Platinum",
+                    "ダイヤモンド": "Diamond",
+                    "エリート": "Elite",
+                    "チャンピオン": "Champion",
+                    "アンリアル": "Unreal",
+                };
+                const buildRankLevels = () => {
+                    const levels = [];
+                    rankRanges.forEach((range) => {
+                        const keyBase = rankIconBaseMap[range.label];
+                        if (!keyBase) {
+                            return;
+                        }
+                        if (!range.roman || range.roman.length <= 1 || range.roman[0] === "") {
+                            levels.push({ key: `${keyBase}_1`, text: range.label });
+                            return;
+                        }
+                        range.roman.forEach((roman, index) => {
+                            levels.push({ key: `${keyBase}_${index + 1}`, text: `${range.label}${roman}` });
+                        });
+                    });
+                    return levels;
+                };
+                const findRankIndex = (label, levels) => {
+                    if (!label) {
+                        return -1;
+                    }
+                    const exact = levels.findIndex((item) => item.text === label);
+                    if (exact !== -1) {
+                        return exact;
+                    }
+                    return levels.findIndex((item) => item.text.startsWith(label));
+                };
+                const getRangeEndIndex = (startLabel, endLabel, levels) => {
+                    const romanMap = { "Ⅰ": 1, "Ⅱ": 2, "Ⅲ": 3 };
+                    const startRange = rankRanges.find((item) => startLabel.startsWith(item.label));
+                    if (startRange && romanMap[endLabel]) {
+                        return findRankIndex(`${startRange.label}${endLabel}`, levels);
+                    }
+                    return findRankIndex(endLabel, levels);
+                };
+                const buildRankIconKeys = (label) => {
+                    if (!label) {
+                        return [];
+                    }
+                    const levels = buildRankLevels();
+                    const trimmed = label.trim();
+                    if (!trimmed) {
+                        return [];
+                    }
+                    if (trimmed.endsWith("以上")) {
+                        const baseLabel = trimmed.replace("以上", "");
+                        const startIndex = findRankIndex(baseLabel, levels);
+                        if (startIndex === -1) {
+                            return [];
+                        }
+                        return levels.slice(startIndex).map((item) => item.key);
+                    }
+                    if (trimmed.includes("～")) {
+                        const [startLabel, endLabel] = trimmed.split("～");
+                        const startIndex = findRankIndex(startLabel, levels);
+                        if (startIndex === -1) {
+                            return [];
+                        }
+                        const endIndex = getRangeEndIndex(startLabel, endLabel, levels);
+                        if (endIndex === -1) {
+                            return levels.slice(startIndex, startIndex + 1).map((item) => item.key);
+                        }
+                        return levels.slice(startIndex, endIndex + 1).map((item) => item.key);
+                    }
+                    const index = findRankIndex(trimmed, levels);
+                    if (index === -1) {
+                        return [];
+                    }
+                    return [levels[index].key];
+                };
+                const renderRankLabel = (label) => {
+                    const keys = buildRankIconKeys(label);
+                    const icons = keys
+                        .map((key) => {
+                            const src = mediaData.rankImages[key];
+                            if (!src) {
+                                return "";
+                            }
+                            return `<img class="tournament-rank-icon" src="${src}" alt="" loading="lazy">`;
+                        })
+                        .filter(Boolean)
+                        .join("");
+                    if (!icons) {
+                        return `<span class="tournament-rank-text">${label}</span>`;
+                    }
+                    return `<div class="tournament-rank-icons" aria-label="${label}">${icons}</div>`;
+                };
+                if (rankData.tabs && rankData.tabs.length > 0) {
+                    const tokenNote = rankData.tokenText ? `<p class="tournament-rank-note">参加要件: ${rankData.tokenText}</p>` : "";
+                    const tabsHtml = rankData.tabs
+                        .map((item, index) => {
+                            const active = index === 0 ? " is-active" : "";
+                            return `<button class="tournament-rank-tab${active}" type="button" data-rank-tab="${item.key}">${item.label}</button>`;
+                        })
+                        .join("");
+                    const panelsHtml = rankData.tabs
+                        .map((item, index) => {
+                            const active = index === 0 ? " is-active" : "";
+                            return `<div class="tournament-rank-panel${active}" data-rank-panel="${item.key}">${renderRankLabel(item.rank)}</div>`;
+                        })
+                        .join("");
+                    modalRank.innerHTML = `
+                        ${tokenNote}
+                        <div class="tournament-rank-tabs" role="tablist" aria-label="参加要件">
+                            ${tabsHtml}
+                        </div>
+                        <div class="tournament-rank-panels" data-active="${rankData.tabs[0].key}">
+                            ${panelsHtml}
+                        </div>
+                    `;
+                    return;
+                }
+                if (rankData.content) {
+                    modalRank.innerHTML = `<div class="tournament-rank-panel is-active">${renderRankLabel(rankData.content)}</div>`;
+                } else {
+                    setModalText(modalRank, "指定なし");
+                }
+            };
+
+            const openRewardLightbox = (imageSrc, altText) => {
+                if (!rewardLightbox || !rewardLightboxImage || !imageSrc) {
+                    return;
+                }
+                rewardLightboxImage.src = imageSrc;
+                rewardLightboxImage.alt = altText || "";
+                rewardLightbox.classList.add("is-open");
+                rewardLightbox.setAttribute("aria-hidden", "false");
+            };
+
+            const closeRewardLightbox = () => {
+                if (!rewardLightbox || !rewardLightboxImage) {
+                    return;
+                }
+                rewardLightbox.classList.remove("is-open");
+                rewardLightbox.setAttribute("aria-hidden", "true");
+                rewardLightboxImage.removeAttribute("src");
+                rewardLightboxImage.alt = "";
+            };
+
+
+            const getPayoutKeys = (entry) => {
+                const details = getDetailsForEntry(entry);
+                return Array.isArray(details && details.payoutTableIds) ? details.payoutTableIds : [];
+            };
+
+            const formatSegmentLabel = (key) => {
+                if (!key) {
+                    return "なし";
+                }
+                const last = key.split("_").pop() || key;
+                const labelMap = {
+                    bronze: "ブロンズ",
+                    blonze: "ブロンズ",
+                    silver: "シルバー",
+                    gold: "ゴールド",
+                    platinum: "プラチナ",
+                    diamond: "ダイヤモンド",
+                    elite: "エリート",
+                    champion: "チャンピオン",
+                    unreal: "アンリアル",
+                };
+                const mapped = labelMap[last.toLowerCase()];
+                return mapped || last;
+            };
+
+            const rankOrder = [
+                "ブロンズ",
+                "シルバー",
+                "ゴールド",
+                "プラチナ",
+                "ダイヤモンド",
+                "エリート",
+                "チャンピオン",
+                "アンリアル",
+            ];
+
+            const renderSegments = (entry) => {
+                if (!modalSegments) {
+                    return null;
+                }
+                const keys = getPayoutKeys(entry);
+                if (keys.length <= 1) {
+                    modalSegments.innerHTML = "";
+                    modalSegments.classList.remove("is-visible");
+                    return keys[0] || null;
+                }
+                const sortedKeys = [...keys].sort((a, b) => {
+                    const labelA = formatSegmentLabel(a);
+                    const labelB = formatSegmentLabel(b);
+                    const indexA = rankOrder.indexOf(labelA);
+                    const indexB = rankOrder.indexOf(labelB);
+                    if (indexA !== -1 || indexB !== -1) {
+                        return (indexA === -1 ? Number.MAX_SAFE_INTEGER : indexA)
+                            - (indexB === -1 ? Number.MAX_SAFE_INTEGER : indexB);
+                    }
+                    return labelA.localeCompare(labelB, "ja");
+                });
+                const initialKey = sortedKeys[0];
+                modalSegments.classList.add("is-visible");
+                modalSegments.innerHTML = sortedKeys
+                    .map((key) => {
+                        const label = formatSegmentLabel(key);
+                        const active = key === initialKey ? " is-active" : "";
+                        return `<button class="tournament-segment${active}" type="button" data-payout-key="${key}">${label}</button>`;
+                    })
+                    .join("");
+                return initialKey;
+            };
+
             const getTodayKey = () => {
                 const now = new Date();
                 const year = now.getFullYear();
@@ -112,12 +1105,20 @@
                 return hours * 60 + minutes;
             };
 
+            const registerEntry = (entry) => {
+                const id = `entry-${entrySeed}`;
+                entrySeed += 1;
+                entryStore.set(id, entry);
+                return id;
+            };
+
             const buildCards = (entries) => {
                 if (!entries || entries.length === 0) {
                     return "<p class=\"tournament-empty\">本日の競技はありません。</p>";
                 }
                 return entries
                     .map((entry, index) => {
+                        const entryId = registerEntry(entry);
                         const title = entry.title || "(タイトル未設定)";
                         const time = formatTime(entry.start, entry.end);
                         const image = entry.displayPlaylistImage || "";
@@ -133,7 +1134,7 @@
                                     <h3 class="tournament-title">${title}</h3>
                                     <div class="tournament-meta">
                                         <p class="tournament-tag">TOURNAMENT</p>
-                                        <a class="btn ghost tournament-action" href="#">詳細を確認</a>
+                                        <a class="btn ghost tournament-action" href="#" data-entry-id="${entryId}">詳細を確認</a>
                                     </div>
                                 </div>
                             </article>
@@ -143,12 +1144,28 @@
             };
 
             if (list) {
-                fetch("assets/data/calendar_by_date.json")
-                    .then((response) => response.json())
-                    .then((data) => {
-                        const rawDates = Array.isArray(data.competitiveDates)
-                            ? data.competitiveDates
-                            : (Array.isArray(data.dates) ? data.dates : []);
+                Promise.all([
+                    fetch("assets/data/calendar_by_date.json").then((response) => response.json()),
+                    fetch("assets/data/calendar_by_date_details.json").then((response) => response.json()),
+                    fetch("assets/data/scoringRuleSets.json").then((response) => response.json()),
+                    fetch("assets/data/payoutTables.json").then((response) => response.json()),
+                ])
+                    .then(([calendarData, detailsData, scoringData, payoutData]) => {
+                        const detailDates = Array.isArray(detailsData && detailsData.dates) ? detailsData.dates : [];
+                        detailDates.forEach((day) => {
+                            const entries = Array.isArray(day.entries) ? day.entries : [];
+                            entries.forEach((detailEntry) => {
+                                if (detailEntry && detailEntry.detailsId) {
+                                    detailData.detailsById.set(detailEntry.detailsId, detailEntry);
+                                }
+                            });
+                        });
+                        detailData.scoringRuleSets = scoringData && scoringData.scoringRuleSets ? scoringData.scoringRuleSets : {};
+                        detailData.payoutTables = payoutData && payoutData.payoutTables ? payoutData.payoutTables : {};
+
+                        const rawDates = Array.isArray(calendarData && calendarData.competitiveDates)
+                            ? calendarData.competitiveDates
+                            : (Array.isArray(calendarData && calendarData.dates) ? calendarData.dates : []);
                         const todayKey = getTodayKey();
                         const now = new Date();
                         const nowMinutes = now.getHours() * 60 + now.getMinutes();
@@ -171,6 +1188,17 @@
                         }
 
                         let activeMonth = "all";
+                        let activeTitle = "";
+
+                        const matchesTitle = (entry) => {
+                            if (!activeTitle) {
+                                return true;
+                            }
+                            if (!entry || !entry.title) {
+                                return false;
+                            }
+                            return entry.title === activeTitle;
+                        };
 
                         const getMonthKey = (value) => {
                             if (!value) {
@@ -193,24 +1221,60 @@
                                 { key: "all", label: "すべて" },
                                 ...months.map((monthKey) => ({ key: monthKey, label: formatMonth(monthKey) })),
                             ];
-
-                            filters.innerHTML = chips
+                            const chipButtons = chips
                                 .map((chip) => {
                                     const activeClass = chip.key === activeMonth ? " active" : "";
                                     return `<button class="tournament-filter${activeClass}" data-month="${chip.key}" type="button">${chip.label}</button>`;
                                 })
                                 .join("");
 
+                            const visibleDates = activeMonth === "all"
+                                ? dates
+                                : dates.filter((day) => getMonthKey(day.date) === activeMonth);
+                            const titles = Array.from(new Set(
+                                visibleDates.flatMap((day) => Array.isArray(day.entries) ? day.entries : [])
+                                    .map((entry) => entry && entry.title)
+                                    .filter(Boolean)
+                            )).sort((a, b) => a.localeCompare(b, "ja"));
+                            if (activeTitle && !titles.includes(activeTitle)) {
+                                activeTitle = "";
+                            }
+                            const titleOptions = [
+                                `<option value=""${activeTitle ? "" : " selected"}>すべて</option>`,
+                                ...titles.map((title) => {
+                                    const selected = title === activeTitle ? " selected" : "";
+                                    return `<option value="${title}"${selected}>${title}</option>`;
+                                }),
+                            ].join("");
+
+                            filters.innerHTML = `
+                                <label class="tournament-title-filter">
+                                    <span class="tournament-title-label">大会名</span>
+                                    <select class="tournament-title-select" aria-label="大会名で選択">
+                                        ${titleOptions}
+                                    </select>
+                                </label>
+                                ${chipButtons}
+                            `;
+
+                            const titleSelect = filters.querySelector(".tournament-title-select");
+                            if (titleSelect) {
+                                titleSelect.addEventListener("change", () => {
+                                    activeTitle = titleSelect.value || "";
+                                    renderAll();
+                                });
+                            }
+
                             Array.from(filters.querySelectorAll(".tournament-filter")).forEach((button) => {
                                 button.addEventListener("click", () => {
                                     activeMonth = button.dataset.month || "all";
-                                    render();
+                                    renderAll();
                                     renderFilters();
                                 });
                             });
                         };
 
-                        const render = () => {
+                        const renderList = () => {
                             const visibleDates = activeMonth === "all"
                                 ? dates
                                 : dates.filter((day) => getMonthKey(day.date) === activeMonth);
@@ -220,7 +1284,7 @@
                                 return;
                             }
 
-                            list.innerHTML = visibleDates
+                            const sections = visibleDates
                                 .map((day) => {
                                     const dateLabel = formatDate(day.date || "");
                                     const entries = Array.isArray(day.entries) ? day.entries : [];
@@ -233,6 +1297,11 @@
                                             return endMinutes >= nowMinutes;
                                         })
                                         : entries;
+                                    const nameFiltered = filteredEntries.filter((entry) => matchesTitle(entry));
+
+                                    if (nameFiltered.length === 0) {
+                                        return "";
+                                    }
 
                                     return `
                                         <section class="tournament-day">
@@ -240,34 +1309,204 @@
                                                 <h2 class="tournament-date">${dateLabel}</h2>
                                             </div>
                                             <div class="tournament-grid">
-                                            ${buildCards(filteredEntries)}
+                                            ${buildCards(nameFiltered)}
                                             </div>
                                         </section>
                                     `;
                                 })
-                                .join("");
+                                .filter(Boolean);
+
+                            if (sections.length === 0) {
+                                list.innerHTML = "<p class=\"tournament-empty\">該当データがありません。</p>";
+                                return;
+                            }
+
+                            list.innerHTML = sections.join("");
                         };
 
-                        if (todayList) {
-                            const today = dates.find((day) => day.date === todayKey);
-                            const todayEntries = today && Array.isArray(today.entries) ? today.entries : [];
-                            const filteredTodayEntries = todayEntries.filter((entry) => {
-                                const endMinutes = toMinutes(entry.end);
-                                if (endMinutes === null) {
-                                    return true;
-                                }
-                                return endMinutes >= nowMinutes;
-                            });
-                            todayList.innerHTML = buildCards(filteredTodayEntries);
-                        }
+            const renderToday = () => {
+                if (!todayList) {
+                    return;
+                }
+                const today = dates.find((day) => day.date === todayKey);
+                const todayEntries = today && Array.isArray(today.entries) ? today.entries : [];
+                const filteredToday = todayEntries.filter((entry) => matchesTitle(entry));
+                todayList.innerHTML = buildCards(filteredToday);
+            };
+
+                        const renderAll = () => {
+                            entryStore.clear();
+                            entrySeed = 0;
+                            renderToday();
+                            renderList();
+                        };
 
                         renderFilters();
-                        render();
+                        renderAll();
                     })
                     .catch(() => {
                         list.innerHTML = "<p class=\"tournament-empty\">読み込みに失敗しました。</p>";
                     });
             }
+
+            const openModal = (entry) => {
+                if (!modal || !entry) {
+                    return;
+                }
+                activeEntry = entry;
+                const title = entry.title || "(タイトル未設定)";
+                modalTitle.textContent = title;
+                modalTime.textContent = formatTime(entry.start, entry.end);
+                const poster = entry.displaySquarePosterImage || "";
+                if (modalPoster && modalMedia && modalLayout) {
+                    if (poster) {
+                        modalPoster.src = poster;
+                        modalPoster.alt = title;
+                        modalMedia.classList.remove("is-hidden");
+                        modalLayout.classList.remove("has-no-media");
+                    } else {
+                        modalPoster.removeAttribute("src");
+                        modalPoster.alt = "";
+                        modalMedia.classList.add("is-hidden");
+                        modalLayout.classList.add("has-no-media");
+                    }
+                }
+                modalPlatforms.innerHTML = renderPlatforms(entry.platforms);
+                if (modalPlatforms) {
+                    modalPlatforms.querySelectorAll(".tournament-chip").forEach((chip) => {
+                        chip.classList.add("tournament-chip--icon-only");
+                    });
+                }
+                const activePayoutKey = renderSegments(entry);
+                renderRequiredRank(entry, activePayoutKey);
+                const rewardPayload = renderRewards(entry, activePayoutKey);
+                modalReward.innerHTML = rewardPayload.html;
+                renderRewardTabs(rewardPayload.keys);
+                setRewardTab("points", rewardPayload.keys);
+                modalPoints.innerHTML = renderPoints(entry, activePayoutKey);
+                updateTopTabs(rewardPayload.keys);
+                modal.classList.add("is-open");
+                modal.setAttribute("aria-hidden", "false");
+                document.body.classList.add("modal-open");
+            };
+
+            const closeModal = () => {
+                if (!modal) {
+                    return;
+                }
+                activeEntry = null;
+                modal.classList.remove("is-open");
+                modal.setAttribute("aria-hidden", "true");
+                document.body.classList.remove("modal-open");
+            };
+
+            document.addEventListener("click", (event) => {
+                const button = event.target.closest(".tournament-action");
+                if (!button) {
+                    return;
+                }
+                event.preventDefault();
+                if (disableMobileModal && window.matchMedia("(max-width: 600px)").matches) {
+                    return;
+                }
+                const entryId = button.dataset.entryId;
+                if (!entryId) {
+                    return;
+                }
+                openModal(entryStore.get(entryId));
+            });
+
+            if (modalSegments) {
+                modalSegments.addEventListener("click", (event) => {
+                    const button = event.target.closest(".tournament-segment");
+                    if (!button || !activeEntry) {
+                        return;
+                    }
+                    const payoutKey = button.dataset.payoutKey;
+                    if (!payoutKey) {
+                        return;
+                    }
+                    modalSegments.querySelectorAll(".tournament-segment").forEach((segment) => {
+                        segment.classList.toggle("is-active", segment === button);
+                    });
+                    const activeTab = getRewardTab();
+                    const rewardPayload = renderRewards(activeEntry, payoutKey);
+                    modalReward.innerHTML = rewardPayload.html;
+                    renderRewardTabs(rewardPayload.keys);
+                    setRewardTab(activeTab, rewardPayload.keys);
+                    updateTopTabs(rewardPayload.keys);
+                    renderRequiredRank(activeEntry, payoutKey);
+                    modalPoints.innerHTML = renderPoints(activeEntry, payoutKey);
+                });
+            }
+
+            if (rewardTabs) {
+                rewardTabs.addEventListener("click", (event) => {
+                    const button = event.target.closest(".tournament-reward-tab");
+                    if (!button) {
+                        return;
+                    }
+                    const tab = button.dataset.rewardTab || "points";
+                    setRewardTab(tab);
+                });
+            }
+
+            if (modalRank) {
+                modalRank.addEventListener("click", (event) => {
+                    const button = event.target.closest(".tournament-rank-tab");
+                    if (!button) {
+                        return;
+                    }
+                    const targetKey = button.dataset.rankTab;
+                    if (!targetKey) {
+                        return;
+                    }
+                    modalRank.querySelectorAll(".tournament-rank-tab").forEach((tab) => {
+                        tab.classList.toggle("is-active", tab === button);
+                    });
+                    modalRank.querySelectorAll(".tournament-rank-panel").forEach((panel) => {
+                        panel.classList.toggle("is-active", panel.dataset.rankPanel === targetKey);
+                    });
+                });
+            }
+
+            document.addEventListener("click", (event) => {
+                const iconWrap = event.target.closest(".tournament-reward-icon-wrap");
+                const image = iconWrap ? iconWrap.querySelector(".tournament-reward-icon") : event.target.closest(".tournament-reward-icon");
+                if (image && image.dataset.full) {
+                    openRewardLightbox(image.dataset.full, image.alt);
+                    return;
+                }
+                if (rewardLightbox && (event.target === rewardLightbox || event.target.closest(".reward-lightbox-close"))) {
+                    closeRewardLightbox();
+                }
+            });
+
+            if (topTabs) {
+                topTabs.addEventListener("click", (event) => {
+                    const button = event.target.closest(".tournament-top-tab");
+                    if (!button) {
+                        return;
+                    }
+                    const tab = button.dataset.topTab || "reward";
+                    setTopTab(tab);
+                });
+            }
+
+            if (modal) {
+                modal.addEventListener("click", (event) => {
+                    if (event.target === modal || event.target.closest("[data-modal-close]")) {
+                        closeModal();
+                    }
+                });
+            }
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") {
+                    closeRewardLightbox();
+                    closeModal();
+                }
+            });
         </script>
             <script src="assets/js/components.js" defer></script>
     </body>
