@@ -1,0 +1,203 @@
+﻿{
+  "layout": "weekly",
+  "title": "グレイテスト・ヒッツ",
+  "expires": "終了: 2026年3月19日 午後5時00分まで",
+  "bannerBg": "linear-gradient(90deg, #29008C, #CF596F)",
+  "bannerImage": "assets/img/T_UI_Figment_S07_Kickstart_MincePounce.png",
+  "bannerAlt": "クエストキャラクター",
+  "currentWeek": 2,
+  "weeks": [
+    {
+      "week": 1,
+      "label": "シーズン7 グレイテスト・ヒッツ",
+      "tasks": [
+        {
+          "title": "フロスティ・フライト、ハッピー・ハムレットおよびポーラー・ピークでバスを降りる (3)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "クラックショットキャビンを探す (1)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ジップラインかアセンダーで一定距離を移動する (500)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ハッピー・ハムレットかシフティ・シャフトで宝箱を開ける (10)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ポーラー・ピークで10秒間スライディングを続ける (10)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "X-4ストームウィング搭乗中に敵プレイヤーにダメージを与える (500)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "デュアルピストル、スコープ付きリボルバーまたはサイレンサー付きスナイパーライフルでプレイヤーを撃破する (15)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "X-4ストームウイングを使って一定距離を移動する (1500)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "消耗品のグライダー1種を複数のマッチで使用する (3)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ストームフェーズを生き延びる (15)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "label": "シーズン7 グレイテスト・ヒッツ(B面)",
+      "tasks": [
+        {
+          "title": "ヘビーアサルトライフルでプレイヤーにヘッドショットを決める (3)",
+          "start": "2026-01-05T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "シフティ・シャフトかソルティ・スプリングスでコンテナを開ける (10)",
+          "start": "2026-01-05T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "クアッドクラッシャーで5,000ポイント以上のトリックを成功させる (1)",
+          "start": "2026-01-05T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "プレイヤーのシールドを割る (5)",
+          "start": "2026-01-05T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "複数の汚染エリアを訪れる (3)",
+          "start": "2026-01-05T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ドリフトボードに乗りながらプレイヤーを撃つ (30)",
+          "start": "2026-01-05T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "様々な武器タイプの弾薬を最大数まで集める (1)",
+          "start": "2026-01-05T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "10m以内のプレイヤーにポンプショットガンでダメージを与える (200)",
+          "start": "2026-01-05T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "マウンテッドタレットで射撃する (50)",
+          "start": "2026-01-05T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "レア度がレア以上のアイテムを収集する (10)",
+          "start": "2026-01-05T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        }
+      ]
+    }
+  ]
+}

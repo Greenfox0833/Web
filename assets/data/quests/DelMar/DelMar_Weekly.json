@@ -1,0 +1,507 @@
+﻿{
+  "layout": "weekly",
+  "title": "ウィークリー クエスト",
+  "expires": "終了: 2026年3月5日 午後6時00分まで",
+  "bannerBg": "linear-gradient(90deg, #F74C1B, #FFDC81)",
+  "bannerImage": "assets/img/T_UI_BattlePass_S39_Quests.png",
+  "bannerAlt": "クエストキャラクター",
+  "currentWeek": 5,
+  "weeks": [
+    {
+      "week": 1,
+      "label": "ウィーク1",
+      "tasks": [
+        {
+          "title": "レースで50%以上のスタート地点ブーストを得る (10)",
+          "start": "2025-11-30T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ターボを発動する (30)",
+          "start": "2025-11-30T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "目標の総距離を走行またはドリフトする (150000)",
+          "start": "2025-11-30T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "レースでスリップストリームを発動する (10)",
+          "start": "2025-11-30T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ターボしながら目標の総距離を走る (45000)",
+          "start": "2025-11-30T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "レースを完走する (15)",
+          "start": "2025-11-30T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "レースでスタート地点ブーストの全パーセンテージを獲得する (600)",
+          "start": "2025-11-30T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "アンダースラストを250%使用してレースを完走する (10)",
+          "start": "2025-11-30T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "label": "ウィーク2",
+      "tasks": [
+        {
+          "title": "ドリフト中にターボを発動する (20)",
+          "start": "2025-12-07T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "空中でターボしながら目標の総距離を走る (40000)",
+          "start": "2025-12-07T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "レーシングでラップを完走する (15)",
+          "start": "2025-12-07T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ターボボーナスゾーンを発動する (30)",
+          "start": "2025-12-07T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "目標の総距離をドリフトまたは飛行する (100000)",
+          "start": "2025-12-07T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "スピードアップパッドに接触する (40)",
+          "start": "2025-12-07T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "レースで他のプレイヤーに勝利する (35)",
+          "start": "2025-12-07T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "目標の総距離をスリップストリームする (10000)",
+          "start": "2025-12-07T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "label": "ウィーク3",
+      "tasks": [
+        {
+          "title": "ターボを6回以上使用してレースを完走する (15)",
+          "start": "2025-12-14T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ドリフトでターボしながら目標の総距離を走る (35000)",
+          "start": "2025-12-14T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "自爆せずにラップを完走する (15)",
+          "start": "2025-12-14T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ドリフトブーストしながら目標の総距離を走る (50000)",
+          "start": "2025-12-14T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "レースでスリップストリームを発動する (10)",
+          "start": "2025-12-14T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "目標の総距離を走る (200000)",
+          "start": "2025-12-14T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "2km以上飛行してレースを完走する (10)",
+          "start": "2025-12-14T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "全パーセンテージのアンダースラストを使用する (700)",
+          "start": "2025-12-14T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "label": "ウィーク4",
+      "tasks": [
+        {
+          "title": "空中でターボを発動する (25)",
+          "start": "2025-12-21T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "レースで50%以上のスタート地点ブーストを得る (15)",
+          "start": "2025-12-21T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "目標の総距離を飛行する (80000)",
+          "start": "2025-12-21T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "レーシングでラップを完走する (20)",
+          "start": "2025-12-21T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "空中またはドリフトでターボしながら目標の総距離を走る (45000)",
+          "start": "2025-12-21T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ハザードにぶつからずにラップを完走する (15)",
+          "start": "2025-12-21T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ターボボーナスゾーンを発動する (30)",
+          "start": "2025-12-21T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "2km以上ドリフトしてレースを完走する (15)",
+          "start": "2025-12-21T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "label": "ウィーク5",
+      "tasks": [
+        {
+          "title": "目標の総距離を走行または飛行する (125000)",
+          "start": "2025-12-28T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "レースで上位4位内でラップを完走する (15)",
+          "start": "2025-12-28T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ターボを発動する (40)",
+          "start": "2025-12-28T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ターボしながら目標の総距離を走る (45000)",
+          "start": "2025-12-28T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ターボボーナスゾーンを3回以上発動してレースを完走する (10)",
+          "start": "2025-12-28T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ドリフトブーストしながら目標の総距離を走る (50000)",
+          "start": "2025-12-28T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "レースで他のプレイヤーに勝利する (35)",
+          "start": "2025-12-28T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "レースを完走する (15)",
+          "start": "2025-12-28T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "label": "ウィーク6",
+      "tasks": [
+        {
+          "title": "ドリフト中にターボボーナスゾーンを発動する (30)",
+          "start": "2026-01-04T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "2km以上飛行してレースを完走する (15)",
+          "start": "2026-01-04T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "レースでスタート地点ブーストの全パーセンテージを獲得する (650)",
+          "start": "2026-01-04T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "目標の総距離をドリフトする (100000)",
+          "start": "2026-01-04T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "自爆せずにレースを完走する (10)",
+          "start": "2026-01-04T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "スピードアップパッドに接触する (45)",
+          "start": "2026-01-04T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "目標の総距離を飛行する (80000)",
+          "start": "2026-01-04T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "全パーセンテージのアンダースラストを使用する (800)",
+          "start": "2026-01-04T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "label": "ウィーク7",
+      "tasks": [
+        {
+          "title": "スリップストリームを2回以上発動してレースを完走する (5)",
+          "start": "2026-01-11T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ターボボーナスゾーンを発動する (35)",
+          "start": "2026-01-11T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "目標の総距離をスリップストリームする (10000)",
+          "start": "2026-01-11T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "レースで50%以上のスタート地点ブーストを得る (15)",
+          "start": "2026-01-11T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "空中でターボしながら目標の総距離を走る (40000)",
+          "start": "2026-01-11T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ドリフト中にターボを発動する (30)",
+          "start": "2026-01-11T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "1,111km/​hの速度に到達してレースを完走する (10)",
+          "start": "2026-01-11T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ドリフトブーストしながら目標の総距離を走る (50000)",
+          "start": "2026-01-11T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "label": "ウィーク8",
+      "tasks": [
+        {
+          "title": "空中でターボボーナスゾーンを発動する (30)",
+          "start": "2026-01-18T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "レースでスタート地点ブーストの全パーセンテージを獲得する (750)",
+          "start": "2026-01-18T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "空中またはドリフトでターボしながら目標の総距離を走る (45000)",
+          "start": "2026-01-18T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "2km以上ドリフトしてレースを完走する (15)",
+          "start": "2026-01-18T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "レースで他のプレイヤーに勝利する (45)",
+          "start": "2026-01-18T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "目標の総距離をドリフトする (100000)",
+          "start": "2026-01-18T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "上位6位内でレースを完走する (10)",
+          "start": "2026-01-18T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "目標の総距離を走る (200000)",
+          "start": "2026-01-18T04:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    }
+  ]
+}

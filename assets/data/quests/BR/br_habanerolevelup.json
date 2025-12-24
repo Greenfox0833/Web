@@ -1,0 +1,71 @@
+﻿{
+  "layout": "weekly",
+  "title": "ランククエスト",
+  "expires": "終了: 2026年3月5日 午後6時00分まで",
+  "bannerBg": "linear-gradient(90deg, #00BEAB, #F8FF25)",
+  "bannerImage": "assets/img/T_UI_AthenaSoldiers_RankedTrooper_Quests.png",
+  "bannerAlt": "クエストキャラクター",
+  "currentWeek": 3,
+  "weeks": [
+    {
+      "week": 1,
+      "label": "ランククエスト / バトルロイヤル",
+      "tasks": [
+        {
+          "title": "ゴールドのランクバトルロイヤルマッチに参戦する (1)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "",
+          "icon": [
+            "assets/img/Reward/T_Sprays_Spray_S39_BRRanked1.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "プラチナのランクバトルロイヤルマッチに参戦する (1)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "",
+          "icon": [
+            "assets/img/Reward/T_BannersIcons_BannerIcon_S39_Ranked1_L.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ダイヤモンドのランクバトルロイヤルマッチに参戦する (1)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "",
+          "icon": [
+            "assets/img/Reward/T_LS_Loading_Screen_s39_Ranked_L.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "エリートのランクバトルロイヤルマッチに参戦する (1)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "",
+          "icon": [
+            "assets/img/Reward/T_Icon_Pickaxes_RankedTandem_L.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "チャンピオンのランクバトルロイヤルマッチに参戦する (1)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "",
+          "icon": [
+            "assets/img/Reward/T_Wraps_RankedTandem_L.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "アンリアルのランクバトルロイヤルマッチに参戦する (1)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "",
+          "icon": [
+            "assets/img/Reward/T_Icon_Pickaxes_RankedTandem_FX_L.png"
+          ],
+          "iconAlt": "XP"
+        }
+      ]
+    }
+  ]
+}

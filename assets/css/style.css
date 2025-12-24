@@ -1321,14 +1321,14 @@ a {
   gap: 16px;
   background: var(--quest-banner-bg, linear-gradient(90deg, #2b4a8f, #4466c4));
   border-radius: 16px;
-  padding: 12px 18px;
+  padding: 26px 24px;
   color: #f8fafc;
   box-shadow: 0 12px 24px rgba(15, 23, 42, 0.2);
-  min-height: 90px;
+  min-height: 160px;
 }
 
 .quest-detail-banner-label {
-  padding-top: 5px;
+  padding-top: 20px;
   padding-left: 80px;
   margin: 0;
   font-size: 14px;
@@ -1339,7 +1339,7 @@ a {
 .quest-detail-banner-title {
   padding-left: 30px;
   margin: 4px 0 0;
-  font-size: clamp(18px, 2.2vw, 28px);
+  font-size: clamp(25px, 2.2vw, 28px);
   line-height: 1.2;
 }
 
@@ -1354,6 +1354,13 @@ a {
   height: auto;
   object-fit: contain;
   pointer-events: none;
+}
+
+.quest-week-controls {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .quest-detail-kicker {
@@ -1558,6 +1565,14 @@ a {
   font-size: 18px;
   line-height: 1.6;
   color: var(--ink);
+}
+
+.quest-inline-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-right: 6px;
 }
 
 .quest-task-date {

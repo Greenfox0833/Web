@@ -1,0 +1,261 @@
+﻿{
+  "layout": "weekly",
+  "title": "ウィークリーハイライト",
+  "expires": "終了: 2026年3月5日 午後6時00分まで",
+  "bannerImage": "assets/img/T_UI_AthenaSoldiers_S39Weeklies_Quests.png",
+  "bannerBg": "linear-gradient(90deg, #466015, #D1DE65)",
+  "bannerAlt": "クエストキャラクター",
+  "currentWeek": 3,
+  "weeks": [
+    {
+      "week": 1,
+      "label": "ウィーク1",
+      "tasks": [
+        {
+          "title": "アーク・ライトニングガンで敵にダメージを与える (500)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "1レベル",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_LevelUp_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ストームのダメージを受けずに他のプレイヤーより長く生き延びる (40)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "<img id=\"HotAirBalloon\"/><bold>熱気球</>から名前付きのエリアに着地する (3)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "乗り物でブーストして一定距離を移動する (500)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ウイングスーツで一定距離を飛行する (500)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "アイアンポンプショットガンまたはグレネードで敵を撃破する (3)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "アサルトライフルの装備中にダッシュで一定距離を移動する (250)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ツルハシでガラスを割る (10)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "label": "ウィーク2",
+      "tasks": [
+        {
+          "title": "倒した<img id=\"boss\"/><Bold>ボスの</>トークンを集めてボスになる (3)",
+          "start": "2025-12-11T23:00:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "爆発物で小道具を破壊する (15)",
+          "start": "2025-12-11T23:00:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ツインハンマーショットガンで敵を撃破する (5)",
+          "start": "2025-12-11T23:00:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ペインテッド・パームズで武器を収集する (3)",
+          "start": "2025-12-11T23:00:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "車両を爆破し、その後全力で逃走する (1)",
+          "start": "2025-12-11T23:00:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "label": "ウィーク3",
+      "tasks": [
+        {
+          "title": "キャット・ホロウェイのクエストをクリアして彼女をアクションヒーローにする (12)",
+          "start": "2025-12-18T23:00:00+09:00",
+          "xp": "1レベル",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_LevelUp_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "キャット・ホロウェイと会って武器の訓練を始める (1)",
+          "start": "2025-12-18T23:00:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "キャット・ホロウェイの弾薬箱を開ける (15)",
+          "start": "2025-12-18T23:00:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ウォンキーランドで射撃練習場の的に攻撃を当てる (10)",
+          "start": "2025-12-18T23:00:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "サイト付きの武器でエイム中、敵にダメージを与える (500)",
+          "start": "2025-12-18T23:00:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "label": "ウィーク4",
+      "tasks": [
+        {
+          "title": "キャット・ホロウェイのためにレア以上の武器を集める (10)",
+          "start": "2025-12-25T23:00:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ダウン状態で自己蘇生デバイスを使う (1)",
+          "start": "2025-12-25T23:00:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "味方スクワッドのために回復アイテムをマーキングする (5)",
+          "start": "2025-12-25T23:00:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "複数の種類の乗り物を操縦する (3)",
+          "start": "2025-12-25T23:00:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "腰撃ちで20m以内の敵にダメージを与える (500)",
+          "start": "2025-12-25T23:00:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "label": "ウィーク5",
+      "tasks": [
+        {
+          "title": "ファイルの中を除くな (1)",
+          "start": "2026-01-01T23:00:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "label": "ウィーク6",
+      "tasks": [
+        {
+          "title": "ファイルの中を除くな (1)",
+          "start": "2026-01-08T23:00:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "label": "ウィーク7",
+      "tasks": [
+        {
+          "title": "ファイルの中を除くな (1)",
+          "start": "2026-01-15T23:00:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "label": "ウィーク8",
+      "tasks": [
+        {
+          "title": "ファイルの中を除くな (1)",
+          "start": "2026-01-22T23:00:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "label": "ウィーク9",
+      "tasks": [
+        {
+          "title": "ファイルの中を除くな (1)",
+          "start": "2026-01-29T23:00:00+09:00",
+          "xp": "12,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    }
+  ]
+}

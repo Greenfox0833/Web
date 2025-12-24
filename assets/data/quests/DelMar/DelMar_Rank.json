@@ -1,0 +1,121 @@
+﻿{
+  "layout": "weekly",
+  "title": "ランククエスト",
+  "expires": "終了: 2026年3月5日 午後6時00分まで",
+  "bannerBg": "linear-gradient(90deg, #F74C1B, #FFDC81)",
+  "bannerImage": "assets/img/T_UI_BattlePass_S39_Quests.png",
+  "bannerAlt": "クエストキャラクター",
+  "currentWeek": 1,
+  "weeks": [
+    {
+      "week": 1,
+      "label": "ランククエスト",
+      "tasks": [
+        {
+          "title": "ゴールドランクでランクレースを完走する (1)",
+          "start": "2025-11-30T04:30:00+09:00",
+          "xp": "",
+          "icon": [
+            "assets/img/Reward/DelMar_Rank/Quest_1/Wheel_RL165_BurntSienna.png",
+            "assets/img/Reward/DelMar_Rank/Quest_1/Wheel_RL165_Cobalt.png",
+            "assets/img/Reward/DelMar_Rank/Quest_1/Wheel_RL165_Grey.png",
+            "assets/img/Reward/DelMar_Rank/Quest_1/Wheel_RL165_Lime.png",
+            "assets/img/Reward/DelMar_Rank/Quest_1/Wheel_RL165_None.png",
+            "assets/img/Reward/DelMar_Rank/Quest_1/Wheel_RL165_Orange.png",
+            "assets/img/Reward/DelMar_Rank/Quest_1/Wheel_RL165_Pink.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "プラチナランクでランクレースを完走する (1)",
+          "start": "2025-11-30T04:30:00+09:00",
+          "xp": "",
+          "icon": [
+            "assets/img/Reward/DelMar_Rank/Quest_2/Wheel_RL165_Black.png",
+            "assets/img/Reward/DelMar_Rank/Quest_2/Wheel_RL165_Crimson.png",
+            "assets/img/Reward/DelMar_Rank/Quest_2/Wheel_RL165_ForestGreen.png",
+            "assets/img/Reward/DelMar_Rank/Quest_2/Wheel_RL165_Purple.png",
+            "assets/img/Reward/DelMar_Rank/Quest_2/Wheel_RL165_Saffron.png",
+            "assets/img/Reward/DelMar_Rank/Quest_2/Wheel_RL165_SkyBlue.png",
+            "assets/img/Reward/DelMar_Rank/Quest_2/Wheel_RL165_TitaniumWhite.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ダイヤモンドランクでランクレースを完走する (1)",
+          "start": "2025-11-30T04:30:00+09:00",
+          "xp": "",
+          "icon": [
+            "assets/img/Reward/DelMar_Rank/Quest_3/Wheel_Lantern_BurntSienna.png",
+            "assets/img/Reward/DelMar_Rank/Quest_3/Wheel_Lantern_Cobalt.png",
+            "assets/img/Reward/DelMar_Rank/Quest_3/Wheel_Lantern_Grey.png",
+            "assets/img/Reward/DelMar_Rank/Quest_3/Wheel_Lantern_Lime.png",
+            "assets/img/Reward/DelMar_Rank/Quest_3/Wheel_Lantern_None.png",
+            "assets/img/Reward/DelMar_Rank/Quest_3/Wheel_Lantern_Orange.png",
+            "assets/img/Reward/DelMar_Rank/Quest_3/Wheel_Lantern_Pink.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "エリートランクでランクレースを完走する (1)",
+          "start": "2025-11-30T04:30:00+09:00",
+          "xp": "",
+          "icon": [
+            "assets/img/Reward/DelMar_Rank/Quest_4/Wheel_Lantern_Black.png",
+            "assets/img/Reward/DelMar_Rank/Quest_4/Wheel_Lantern_Crimson.png",
+            "assets/img/Reward/DelMar_Rank/Quest_4/Wheel_Lantern_ForestGreen.png",
+            "assets/img/Reward/DelMar_Rank/Quest_4/Wheel_Lantern_Purple.png",
+            "assets/img/Reward/DelMar_Rank/Quest_4/Wheel_Lantern_Saffron.png",
+            "assets/img/Reward/DelMar_Rank/Quest_4/Wheel_Lantern_SkyBlue.png",
+            "assets/img/Reward/DelMar_Rank/Quest_4/Wheel_Lantern_TitaniumWhite.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "チャンピオンランクでランクレースを完走する (1)",
+          "start": "2025-11-30T04:30:00+09:00",
+          "xp": "",
+          "icon": [
+            "assets/img/Reward/DelMar_Rank/Quest_5/VTID_Booster_LightRay_Black.png",
+            "assets/img/Reward/DelMar_Rank/Quest_5/VTID_Booster_LightRay_BurntSienna.png",
+            "assets/img/Reward/DelMar_Rank/Quest_5/VTID_Booster_LightRay_Cobalt.png",
+            "assets/img/Reward/DelMar_Rank/Quest_5/VTID_Booster_LightRay_Crimson.png",
+            "assets/img/Reward/DelMar_Rank/Quest_5/VTID_Booster_LightRay_ForestGreen.png",
+            "assets/img/Reward/DelMar_Rank/Quest_5/VTID_Booster_LightRay_Grey.png",
+            "assets/img/Reward/DelMar_Rank/Quest_5/VTID_Booster_LightRay_Lime.png",
+            "assets/img/Reward/DelMar_Rank/Quest_5/VTID_Booster_LightRay_None.png",
+            "assets/img/Reward/DelMar_Rank/Quest_5/VTID_Booster_LightRay_Orange.png",
+            "assets/img/Reward/DelMar_Rank/Quest_5/VTID_Booster_LightRay_Pink.png",
+            "assets/img/Reward/DelMar_Rank/Quest_5/VTID_Booster_LightRay_Purple.png",
+            "assets/img/Reward/DelMar_Rank/Quest_5/VTID_Booster_LightRay_Saffron.png",
+            "assets/img/Reward/DelMar_Rank/Quest_5/VTID_Booster_LightRay_SkyBlue.png",
+            "assets/img/Reward/DelMar_Rank/Quest_5/VTID_Booster_LightRay_TitaniumWhite.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "アンリアルランクでランクレースを完走する (1)",
+          "start": "2025-11-30T04:30:00+09:00",
+          "xp": "",
+          "icon": [
+            "assets/img/Reward/DelMar_Rank/Quest_6/VTID_DriftTrail_Deepspace_Black.png",
+            "assets/img/Reward/DelMar_Rank/Quest_6/VTID_DriftTrail_Deepspace_BurntSienna.png",
+            "assets/img/Reward/DelMar_Rank/Quest_6/VTID_DriftTrail_Deepspace_Cobalt.png",
+            "assets/img/Reward/DelMar_Rank/Quest_6/VTID_DriftTrail_Deepspace_Crimson.png",
+            "assets/img/Reward/DelMar_Rank/Quest_6/VTID_DriftTrail_Deepspace_ForestGreen.png",
+            "assets/img/Reward/DelMar_Rank/Quest_6/VTID_DriftTrail_Deepspace_Grey.png",
+            "assets/img/Reward/DelMar_Rank/Quest_6/VTID_DriftTrail_Deepspace_Lime.png",
+            "assets/img/Reward/DelMar_Rank/Quest_6/VTID_DriftTrail_Deepspace_None.png",
+            "assets/img/Reward/DelMar_Rank/Quest_6/VTID_DriftTrail_Deepspace_Orange.png",
+            "assets/img/Reward/DelMar_Rank/Quest_6/VTID_DriftTrail_Deepspace_Pink.png",
+            "assets/img/Reward/DelMar_Rank/Quest_6/VTID_DriftTrail_Deepspace_Purple.png",
+            "assets/img/Reward/DelMar_Rank/Quest_6/VTID_DriftTrail_Deepspace_Saffron.png",
+            "assets/img/Reward/DelMar_Rank/Quest_6/VTID_DriftTrail_Deepspace_SkyBlue.png",
+            "assets/img/Reward/DelMar_Rank/Quest_6/VTID_DriftTrail_Deepspace_TitaniumWhite.png"
+          ],
+          "iconAlt": "XP"
+        }
+      ]
+    }
+  ]
+}

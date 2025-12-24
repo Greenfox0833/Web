@@ -1,0 +1,389 @@
+﻿{
+  "layout": "weekly",
+  "title": "ウィークリークエスト",
+  "expires": "終了: 2026年3月5日 午後5時00分まで",
+  "bannerBg": "linear-gradient(90deg, #00648B, #00AAEC)",
+  "bannerImage": "assets/img/T_UI_BP_S19_ChallengeBook_Misc_02.png",
+  "bannerAlt": "クエストキャラクター",
+  "currentWeek": 3,
+  "weeks": [
+    {
+      "week": 1,
+      "label": "ウィーク0",
+      "tasks": [
+        {
+          "title": "ピストルでプレイヤーを撃破する (5)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "アサルトライフルでプレイヤーにダメージを与える (1000)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ポーラー・ピークまたはティルテッド・タワーで宝箱を探す (10)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "クアッドクラッシャーで一定距離を移動する (800)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "label": "ウィーク1",
+      "tasks": [
+        {
+          "title": "ショットガンでプレイヤーを撃破する (5)",
+          "start": "2025-12-18T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "サブマシンガンでプレイヤーにダメージを与える (750)",
+          "start": "2025-12-18T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "シフティ・シャフトかソルティ・スプリングスでコンテナを開ける (10)",
+          "start": "2025-12-18T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "スコープ付きの武器でプレイヤーにヘッドショットを決める (3)",
+          "start": "2025-12-18T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "label": "ウィーク2",
+      "tasks": [
+        {
+          "title": "サイレンサー付きの武器でプレイヤーを撃破する (3)",
+          "start": "2025-12-23T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "スナイパーライフルでプレイヤーにダメージを与える (750)",
+          "start": "2025-12-23T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "弾薬を収集する (500)",
+          "start": "2025-12-23T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "補給物資を開ける (2)",
+          "start": "2025-12-23T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "label": "ウィーク3",
+      "tasks": [
+        {
+          "title": "30m超の距離からプレイヤーを撃破する (5)",
+          "start": "2025-12-30T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "デュアルピストルまたはスコープ付きリボルバーでプレイヤーにダメージを与える (500)",
+          "start": "2025-12-30T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "レア以上のアイテムを収集する (10)",
+          "start": "2025-12-30T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "スティンクボムでプレイヤーにダメージを与える (100)",
+          "start": "2025-12-30T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "label": "ウィーク4",
+      "tasks": [
+        {
+          "title": "ピストルでプレイヤーを撃破する (5)",
+          "start": "2026-01-09T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "サーマルスコープ付きアサルトライフルかボルトアクションスナイパーライフルでプレイヤーにダメージを与える (750)",
+          "start": "2026-01-09T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "リーキー・レイクかウェイリング・ウッズで宝箱を開ける (10)",
+          "start": "2026-01-09T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "名前付きのエリア外にある宝箱を開ける (15)",
+          "start": "2026-01-09T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "label": "ウィーク5",
+      "tasks": [
+        {
+          "title": "30m超の距離からプレイヤーを撃破する (3)",
+          "start": "2026-01-15T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ポンプショットガンかダイナマイトでプレイヤーにダメージを与える (750)",
+          "start": "2026-01-15T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ティルテッド・タワーかロンリー・ロッジで宝箱を開ける (10)",
+          "start": "2026-01-15T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "複数のマッチでクアッドランチャーを収集する (2)",
+          "start": "2026-01-15T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "label": "ウィーク6",
+      "tasks": [
+        {
+          "title": "サブマシンガンでプレイヤーを撃破する (3)",
+          "start": "2026-01-22T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "タクティカルショットガンかヘビーアサルトライフルでプレイヤーにダメージを与える (750)",
+          "start": "2026-01-22T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "パラダイス・パームズかダスティ・ディボットで宝箱を開ける (10)",
+          "start": "2026-01-22T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "レジェンドのアイテムを収集する (3)",
+          "start": "2026-01-22T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "label": "ウィーク7",
+      "tasks": [
+        {
+          "title": "レア度がエピック以上の武器でプレイヤーを撃破する (5)",
+          "start": "2026-01-29T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "クアッドランチャーかシックスシューターでプレイヤーにダメージを与える (750)",
+          "start": "2026-01-29T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "プレザント・パークかフェイタル・フィールドで宝箱を開ける (10)",
+          "start": "2026-01-29T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "金属の建築物を建築または破壊する (15)",
+          "start": "2026-01-29T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "label": "ウィーク8",
+      "tasks": [
+        {
+          "title": "ファイルの中身を見るな (10)",
+          "start": "2026-02-05T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "label": "ウィーク9",
+      "tasks": [
+        {
+          "title": "ファイルの中身を見るな (10)",
+          "start": "2026-02-12T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "label": "ウィーク10",
+      "tasks": [
+        {
+          "title": "ファイルの中身を見るな (10)",
+          "start": "2026-02-19T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 12,
+      "label": "ウィーク11",
+      "tasks": [
+        {
+          "title": "ファイルの中身を見るな (10)",
+          "start": "2026-02-26T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 13,
+      "label": "ウィーク12",
+      "tasks": [
+        {
+          "title": "ファイルの中身を見るな (10)",
+          "start": "2026-03-05T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 14,
+      "label": "ウィーク13",
+      "tasks": [
+        {
+          "title": "ファイルの中身を見るな (10)",
+          "start": "2026-03-12T23:00:00+09:00",
+          "xp": "8,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+﻿{
+  "layout": "weekly",
+  "title": "チームを組もう！",
+  "expires": "終了: 2026年3月5日 午後6時00分まで",
+  "bannerBg": "linear-gradient(90deg, #8E54C4, #5F4CDD)",
+  "bannerImage": "assets/img/T_UI_GoldLlama_MimosaShark_Quests.png",
+  "bannerAlt": "クエストキャラクター",
+  "currentWeek": 3,
+  "weeks": [
+    {
+      "week": 1,
+      "label": "ツルハシ「スターブライト・スラッシャー」",
+      "tasks": [
+        {
+          "title": "他のプレイヤーとスクワッドを組んでシャイニーラマを集める (400)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "",
+          "icon": "assets/img/T-Icon-Pickaxes-AkimboEnvoy-L.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 1,
+      "label": "チームを組もう！ マイルストーン",
+      "tasks": [
+        {
+          "title": "他のプレイヤーとスクワッドを組んでシャイニーラマを集める (100)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "12,000",
+          "icon": [
+            "assets/img/T_UI_UniversalXP_Icon_Standard_512.png"
+          ],
+          "iconAlt": "XP"
+        },
+        {
+          "title": "他のプレイヤーとスクワッドを組んでシャイニーラマを集める (200)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "他のプレイヤーとスクワッドを組んでシャイニーラマを集める (300)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "8,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "他のプレイヤーとスクワッドを組んでシャイニーラマを集める (400)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "6,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "他のプレイヤーとスクワッドを組んでシャイニーラマを集める (500)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "4,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "他のプレイヤーとスクワッドを組んでシャイニーラマを集める (600)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "2,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "他のプレイヤーとスクワッドを組んでシャイニーラマを集める (700)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "1,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "他のプレイヤーとスクワッドを組んでシャイニーラマを集める (800)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "1,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "他のプレイヤーとスクワッドを組んでシャイニーラマを集める (900)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "1,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "他のプレイヤーとスクワッドを組んでシャイニーラマを集める (1000)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "1,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    }
+  ]
+}

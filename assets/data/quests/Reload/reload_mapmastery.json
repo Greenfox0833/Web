@@ -1,0 +1,161 @@
+﻿{
+  "layout": "weekly",
+  "title": "マップマスタリー",
+  "expires": "終了: 2026年3月5日 午後6時00分まで",
+  "bannerBg": "linear-gradient(90deg, #B5B000, #2298B0)",
+  "bannerImage": "assets/img/T_UI_Reload_MasteryMap_Quests.png",
+  "bannerAlt": "クエストキャラクター",
+  "currentWeek": 3,
+  "weeks": [
+    {
+      "week": 1,
+      "label": "マップマスタリーボーナス目標",
+      "tasks": [
+        {
+          "title": "リロード: マップマスタリーのクエストをクリアする (2)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "",
+          "icon": "assets/img/Reward/Mapmastery/T_SpraysPreviewImages_Spray_S39_Quest_L.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "リロード: マップマスタリーのクエストをクリアする (4)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "",
+          "icon": "assets/img/Reward/Mapmastery/T_SpraysPreviewImages_Spray_S39_Quest2_L.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "リロード: マップマスタリーのクエストをクリアする (6)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "",
+          "icon": "assets/img/Reward/Mapmastery/T_Emoticons_Emoticon_S39Quest.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "リロード: マップマスタリーのクエストをクリアする (8)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "",
+          "icon": "assets/img/Reward/Mapmastery/T_Emoticons_Emoticon_S39Quest2.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "リロード: マップマスタリーのクエストをクリアする (10)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "",
+          "icon": "assets/img/Reward/Mapmastery/T_Wraps_OptimalMelee_L.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "リロード: マップマスタリーのクエストをクリアする (12)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "",
+          "icon": "assets/img/Reward/Mapmastery/T_Icon_Emotes_SweepingClean_L.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 1,
+      "label": "ベンチャーマスタリー",
+      "tasks": [
+        {
+          "title": "<img id=\"MapMasteryTier1\"/>[ティア1/4] ベンチャーでプレイヤーを撃破する (30)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "<img id=\"MapMasteryTier2\"/>[ティア2/4] ベンチャーでトップ10のプレイヤーに入る (10)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "<img id=\"MapMasteryTier3\"/>[ティア3/4] ベンチャーでプレイヤーを撃破する (50)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "<img id=\"MapMasteryTier4\"/>[ティア4/4] ベンチャーでVictory Royalを達成する (2)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 1,
+      "label": "サーフシティマスタリー",
+      "tasks": [
+        {
+          "title": "<img id=\"MapMasteryTier1\"/>[ティア1/4] サーフシティでプレイヤーを撃破する (30)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "<img id=\"MapMasteryTier2\"/>[ティア2/4] サーフシティでトップ10のプレイヤーに入る (10)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "<img id=\"MapMasteryTier3\"/>[ティア3/4] サーフシティでプレイヤーを撃破する (50)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "<img id=\"MapMasteryTier4\"/>[ティア4/4] サーフシティでVictory Royalを達成する (2)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 1,
+      "label": "オアシスマスタリー",
+      "tasks": [
+        {
+          "title": "<img id=\"MapMasteryTier1\"/>[ティア1/4] オアシスでプレイヤーを撃破する (30)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "<img id=\"MapMasteryTier2\"/>[ティア2/4] オアシスでトップ10のプレイヤーに入る (10)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "<img id=\"MapMasteryTier3\"/>[ティア3/4] オアシスでプレイヤーを撃破する (50)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "<img id=\"MapMasteryTier4\"/>[ティア4/4] オアシスでVictory Royalを達成する (2)",
+          "start": "2025-12-01T03:30:00+09:00",
+          "xp": "10,000",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    }
+  ]
+}

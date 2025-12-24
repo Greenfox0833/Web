@@ -22,6 +22,32 @@
     return `${prefix}${path}`;
   };
 
+  const normalizeIcons = (iconValue) => {
+    if (!iconValue) {
+      return [];
+    }
+    if (Array.isArray(iconValue)) {
+      return iconValue.filter(Boolean).map((value) => resolvePath(value));
+    }
+    if (typeof iconValue === "string") {
+      return [resolvePath(iconValue)];
+    }
+    return [];
+  };
+
+  const renderQuestText = (text) => {
+    if (!text) {
+      return "";
+    }
+    return String(text).replace(
+      /<img\s+id=(["']?)([^"'\s/>]+)\1\s*\/?>/gi,
+      (_match, _quote, iconId) => {
+        const src = resolvePath(`assets/img/QuestIcon/${iconId}.png`);
+        return `<img class="quest-inline-icon" src="${src}" alt="">`;
+      }
+    );
+  };
+
   const formatDateTime = (date) => {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1);
@@ -57,6 +83,46 @@
     });
   };
 
+  const applyTaskRewardRotation = () => {
+    root.querySelectorAll(".quest-task-icon[data-icons]").forEach((icon) => {
+      const icons = (icon.dataset.icons || "")
+        .split("|")
+        .map((value) => value.trim())
+        .filter(Boolean);
+      if (icons.length < 2) {
+        return;
+      }
+      let index = 0;
+      icon.src = icons[index];
+      const intervalMs = Number(icon.dataset.iconInterval || 2500);
+      setInterval(() => {
+        index = (index + 1) % icons.length;
+        icon.src = icons[index];
+      }, intervalMs);
+    });
+  };
+
+  const applyWeekControls = () => {
+    const controls = root.querySelector(".quest-week-controls");
+    if (!controls) {
+      return;
+    }
+    const toggleWeeks = (shouldOpen) => {
+      root.querySelectorAll(".quest-week").forEach((section) => {
+        if (section.classList.contains("is-locked")) {
+          return;
+        }
+        section.open = shouldOpen;
+      });
+    };
+    controls.querySelectorAll("[data-quest-toggle]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const action = button.dataset.questToggle;
+        toggleWeeks(action === "open");
+      });
+    });
+  };
+
   const renderList = (data) => {
     const title = data.title || "Quests";
     const items = Array.isArray(data.items) ? data.items : [];
@@ -75,8 +141,8 @@
             return `
               <div class="quest-item"${startAttr}>
                 <div>
-                  <p class="quest-name">${name}</p>
-                  <p class="quest-desc">${desc}</p>
+                  <p class="quest-name">${renderQuestText(name)}</p>
+                  <p class="quest-desc">${renderQuestText(desc)}</p>
                   ${start ? `<p class="quest-item-date quest-task-date"></p>` : ""}
                 </div>
                 <span class="quest-chip ${chip}">${chipLabel}</span>
@@ -139,6 +205,10 @@
             : ""
         }
       </section>
+      <div class="quest-week-controls" role="group" aria-label="クエストをまとめて開閉">
+        <button class="btn ghost" type="button" data-quest-toggle="close">全部閉じる</button>
+        <button class="btn primary" type="button" data-quest-toggle="open">全部開く</button>
+      </div>
       ${weeks
         .map((week) => {
           const weekNumber = Number(week.week || 0);
@@ -146,7 +216,7 @@
           const tasks = Array.isArray(week.tasks) ? week.tasks : [];
           const weekStart = resolveWeekStart(tasks);
           return `
-            <details class="quest-week" data-week="${weekNumber}" data-week-start="${weekStart}">
+            <details class="quest-week" data-week="${weekNumber}" data-week-start="${weekStart}" open>
               <summary>
                 <span class="quest-week-title">${label}</span>
                 <span class="quest-week-meta" aria-live="polite"></span>
@@ -154,11 +224,16 @@
               <div class="quest-task-list">
                 ${tasks
                   .map((task) => {
-                    const taskTitle = task.title || "";
+                    const taskTitle = renderQuestText(task.title || "");
                     const taskStart = task.start || "";
                     const taskXp = task.xp || "";
-                    const icon = resolvePath(task.icon);
+                    const icons = normalizeIcons(task.icon);
                     const iconAlt = task.iconAlt || "XP";
+                    const iconSrc = icons[0] || "";
+                    const iconData =
+                      icons.length > 1
+                        ? ` data-icons="${icons.join("|")}" data-icon-interval="2500"`
+                        : "";
                     return `
                       <article class="quest-task-card" data-start="${taskStart}">
                         <div class="quest-task-body">
@@ -167,8 +242,8 @@
                         </div>
                         <div class="quest-task-side">
                           ${
-                            icon
-                              ? `<img class="quest-task-icon" src="${icon}" width="48" height="48" alt="${iconAlt}">`
+                            iconSrc
+                              ? `<img class="quest-task-icon" src="${iconSrc}" width="48" height="48" alt="${iconAlt}"${iconData}>`
                               : ""
                           }
                           <span class="quest-task-xp">${taskXp}</span>
@@ -184,6 +259,9 @@
         .join("")}
     `;
 
+    applyTaskRewardRotation();
+    applyWeekControls();
+
     root.dispatchEvent(
       new CustomEvent("quest:weekly-rendered", {
         bubbles: true,
@@ -192,11 +270,47 @@
     );
   };
 
-  fetch(`${prefix}assets/data/quests/${mode}_${type}.json`)
-    .then((response) => response.json())
+  const uniqueList = (items) => [...new Set(items.filter(Boolean))];
+  const toTitle = (value) =>
+    value ? `${value[0].toUpperCase()}${value.slice(1).toLowerCase()}` : "";
+
+  const loadQuestData = (paths) => {
+    if (!paths.length) {
+      return Promise.reject(new Error("Quest data not found"));
+    }
+    const [current, ...rest] = paths;
+    return fetch(current)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Quest data not found");
+        }
+        return response.json();
+      })
+      .catch((error) => {
+        if (!rest.length) {
+          throw error;
+        }
+        return loadQuestData(rest);
+      });
+  };
+
+  const fileModes = uniqueList([mode, mode.toLowerCase()]);
+  const fileTypes = uniqueList([type, type.toLowerCase(), toTitle(type)]);
+  const folderModes = uniqueList([mode, mode.toUpperCase(), toTitle(mode)]);
+  const fileNames = fileModes.flatMap((modePart) =>
+    fileTypes.map((typePart) => `${modePart}_${typePart}.json`)
+  );
+  const candidates = [
+    ...fileNames.map((name) => `${prefix}assets/data/quests/${name}`),
+    ...folderModes.flatMap((folder) =>
+      fileNames.map((name) => `${prefix}assets/data/quests/${folder}/${name}`)
+    ),
+  ];
+
+  loadQuestData(candidates)
     .then((data) => {
       if (!data) {
-        root.innerHTML = "<p class=\"quest-empty\">クエストがまだありません</p>";
+        root.innerHTML = '<p class="quest-empty">クエストがまだありません</p>';
         return;
       }
       if (data.layout === "weekly") {
@@ -206,6 +320,10 @@
       renderList(data);
     })
     .catch(() => {
-      root.innerHTML = "<p class=\"quest-empty\">読み込みに失敗しました</p>";
+      root.innerHTML = '<p class="quest-empty">読み込みに失敗しました</p>';
     });
+
 })();
+
+
+
