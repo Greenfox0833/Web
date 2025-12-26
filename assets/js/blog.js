@@ -8,7 +8,7 @@ let filteredPosts = [];
 let currentPage = 1;
 let tagMap = {};
 let activeTag = "all";
-const featuredPostId = "post-004";
+const featuredPostId = "post-005";
 
 const normalizeDateTime = (value) => {
   if (typeof value !== "string") {

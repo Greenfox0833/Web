@@ -1,0 +1,169 @@
+{
+  "tags": {
+    "クエスト": { "label": "クエスト", "color": "#38bdf8"},
+    "アップデート": { "label": "アップデート", "color": "#ffff00"},
+    "新シーズン": { "label": "新シーズン", "color": "#1a9a1a"}
+  },
+
+  "modeTags": {
+    "BR": { "label": "BR", "color": "#2664eb"},
+    "Reload": { "label": "Reload", "color": "#f97316"},
+    "Fortnite": { "label": "Fortnite", "color": "#0ea5e9"},
+    "DelMar": { "label": "Rocket Racing", "color": "#444444"},
+    "Sparks": { "label": "Fortnite Festival", "color": "#ff00ff"},
+    "Figment": { "label": "Fortnite ORIGIN", "color": "#9900ff"}
+  },
+
+  "schedule": {
+    "2025-12-28": [
+      {
+        "tag": "クエスト",
+        "leftColor": "#38bdf8",
+        "modes": ["DelMar"],
+        "time": "4:30",
+        "title": "ウィークリークエスト / ウィーク5"
+      }
+    ],
+    "2025-12-30": [
+      {
+        "tag": "クエスト",
+        "leftColor": "#38bdf8",
+        "modes": ["Figment"],
+        "time": "23:00",
+        "title": "ウィークリークエスト / ウィーク3"
+      }
+    ],
+    "2026-01-01": [
+      {
+        "tag": "クエスト",
+        "leftColor": "#38bdf8",
+        "modes": ["BR"],
+        "time": "23:00",
+        "title": "ウィークリークエスト"
+      }
+    ],
+    "2026-01-04": [
+      {
+        "tag": "クエスト",
+        "leftColor": "#38bdf8",
+        "modes": ["DelMar"],
+        "time": "4:30",
+        "title": "ウィークリークエスト / ウィーク6"
+      }
+    ],
+    "2026-01-08": [
+      {
+        "tag": "クエスト",
+        "leftColor": "#38bdf8",
+        "modes": ["BR"],
+        "time": "23:00",
+        "title": "ウィークリークエスト"
+      }
+    ],
+    "2026-01-09": [
+      {
+        "tag": "アップデート",
+        "leftColor": "#ffff00",
+        "modes": ["Fortnite"],
+        "time": "18:00",
+        "title": "アップデート"
+      },
+      {
+        "tag": "クエスト",
+        "leftColor": "#38bdf8",
+        "modes": ["Figment"],
+        "time": "23:00",
+        "title": "ウィークリークエスト / ウィーク4"
+      }
+    ],
+    "2026-01-11": [
+      {
+        "tag": "クエスト",
+        "leftColor": "#38bdf8",
+        "modes": ["DelMar"],
+        "time": "4:30",
+        "title": "ウィークリークエスト / ウィーク7"
+      }
+    ],
+    "2026-01-15": [
+      {
+        "tag": "クエスト",
+        "leftColor": "#38bdf8",
+        "modes": ["BR"],
+        "time": "23:00",
+        "title": "ウィークリークエスト"
+      },
+      {
+        "tag": "クエスト",
+        "leftColor": "#38bdf8",
+        "modes": ["Figment"],
+        "time": "23:00",
+        "title": "ウィークリークエスト / ウィーク5"
+      }
+    ],
+    "2026-01-18": [
+      {
+        "tag": "クエスト",
+        "leftColor": "#38bdf8",
+        "modes": ["DelMar"],
+        "time": "4:30",
+        "title": "ウィークリークエスト / ウィーク8"
+      }
+    ],
+    "2026-01-22": [
+      {
+        "tag": "クエスト",
+        "leftColor": "#38bdf8",
+        "modes": ["BR"],
+        "time": "23:00",
+        "title": "ウィークリークエスト"
+      },
+      {
+        "tag": "アップデート",
+        "leftColor": "#ffff00",
+        "modes": ["Fortnite"],
+        "time": "18:00",
+        "title": "アップデート"
+      },
+      {
+        "tag": "クエスト",
+        "leftColor": "#38bdf8",
+        "modes": ["Figment"],
+        "time": "23:00",
+        "title": "ウィークリークエスト / ウィーク6"
+      }
+    ],
+    "2026-02-05": [
+      {
+        "tag": "クエスト",
+        "leftColor": "#38bdf8",
+        "modes": ["BR"],
+        "time": "23:00",
+        "title": "ウィークリークエスト"
+      },
+      {
+        "tag": "アップデート",
+        "leftColor": "#ffff00",
+        "modes": ["Fortnite"],
+        "time": "18:00",
+        "title": "アップデート"
+      },
+      {
+        "tag": "新シーズン",
+        "leftColor": "#1a9a1a",
+        "modes": ["Sparks"],
+        "time": "18:00",
+        "title": "Fortnite Festival : シーズン13"
+      }
+    ],
+    "2026-02-19": [
+      {
+        "tag": "アップデート",
+        "leftColor": "#ffff00",
+        "modes": ["Fortnite"],
+        "time": "18:00",
+        "title": "アップデート"
+      }
+    ]
+  }
+}

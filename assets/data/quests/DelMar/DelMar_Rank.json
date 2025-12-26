@@ -2,8 +2,8 @@
   "layout": "weekly",
   "title": "ランククエスト",
   "expires": "終了: 2026年3月5日 午後6時00分まで",
-  "bannerBg": "linear-gradient(90deg, #F74C1B, #FFDC81)",
-  "bannerImage": "assets/img/T_UI_BattlePass_S39_Quests.png",
+  "bannerBg": "linear-gradient(90deg, #00BEAB, #F8FF25)",
+  "bannerImage": "assets/img/T_UI_AthenaSoldiers_RankedTrooper_Quests.png",
   "bannerAlt": "クエストキャラクター",
   "currentWeek": 1,
   "weeks": [

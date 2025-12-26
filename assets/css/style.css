@@ -868,12 +868,51 @@ a {
 
 .timeline-item {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px 18px;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 20px;
   border-radius: 16px;
   background: white;
   box-shadow: 0 12px 26px rgba(15, 23, 42, 0.12);
+  border-left: 6px solid var(--timeline-accent, #38bdf8);
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  flex: 1;
+  min-width: 0;
+}
+
+.timeline-info {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.timeline-mode-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.timeline-item:nth-child(4n + 1) {
+  --timeline-accent: #38bdf8;
+}
+
+.timeline-item:nth-child(4n + 2) {
+  --timeline-accent: #f97316;
+}
+
+.timeline-item:nth-child(4n + 3) {
+  --timeline-accent: #22c55e;
+}
+
+.timeline-item:nth-child(4n + 4) {
+  --timeline-accent: #a855f7;
 }
 
 .timeline-date {
@@ -881,11 +920,45 @@ a {
   color: var(--accent);
   min-width: 48px;
   margin: 0;
+  text-align: center;
+  align-self: center;
 }
 
 .timeline-title {
   margin: 0;
   color: var(--ink);
+  font-size: 16px;
+  letter-spacing: 0.02em;
+}
+
+.timeline-tags {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-self: center;
+}
+
+.timeline-tag {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  background: var(--tag-color, #64748b);
+  color: #fff;
+  white-space: nowrap;
+}
+
+.timeline-tag.mode {
+  background: transparent;
+  border: 1px solid var(--tag-color, #0ea5e9);
+  color: var(--tag-color, #0ea5e9);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 /* Community */
@@ -1075,10 +1148,11 @@ a {
   border: 5px solid rgba(255, 255, 255, 1);
   --quest-cover: none;
   --quest-banner-bg: linear-gradient(135deg, rgba(15, 23, 42, 0.2), rgba(15, 23, 42, 0.6));
+  --quest-cover-scale: 1;
   background-image: linear-gradient(180deg, rgba(8, 12, 24, 0.1), rgba(8, 12, 24, 0.85)),
-                    var(--quest-cover),
-                    var(--quest-banner-bg);
-  background-size: cover, 25% auto, cover;
+                      var(--quest-cover),
+                      var(--quest-banner-bg);
+  background-size: cover, calc(25% * var(--quest-cover-scale, 1)) auto, cover;
   background-position: center, right 6% center, center;
   background-repeat: no-repeat;
 }
@@ -1320,6 +1394,7 @@ a {
   justify-content: space-between;
   gap: 16px;
   background: var(--quest-banner-bg, linear-gradient(90deg, #2b4a8f, #4466c4));
+  --quest-banner-scale: 1;
   border-radius: 16px;
   padding: 26px 24px;
   color: #f8fafc;
@@ -1348,7 +1423,8 @@ a {
   position: absolute;
   right: 12px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) scale(var(--quest-banner-scale, 1));
+  transform-origin: right center;
   width: 180px;
   max-height: 100%;
   height: auto;

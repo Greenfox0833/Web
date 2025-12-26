@@ -8,6 +8,13 @@
   const type = root.dataset.questType;
   const base = document.body.dataset.base || "";
   const prefix = base ? `${base}/` : "";
+  const bannerScale = root.dataset.questBannerScale;
+  if (bannerScale) {
+    const trimmed = bannerScale.trim();
+    if (/^\d*\.?\d+$/.test(trimmed)) {
+      root.style.setProperty("--quest-banner-scale", trimmed);
+    }
+  }
 
   const resolvePath = (path) => {
     if (!path) {

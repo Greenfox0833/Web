@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap">
+        <title>スケジュール | フォートナイト情報アカウント</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body data-page="schedule" data-base="">
+        <div data-include="includes/header.html"></div>
+
+        <main class="page schedule-page">
+            <section class="quest-hub">
+                <div class="quest-hub-head">
+                    <p class="pill">Schedule</p>
+                    <h1>1日のスケジュール</h1>
+                    <p class="lead">日付ごとに詳しい予定をまとめています。</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-head">
+                    <h2 id="schedule-section-title">1月の予定</h2>
+                    <p id="schedule-section-note">時間と内容を一覧で確認できます。</p>
+                </div>
+                <div id="schedule-week-filters" class="filter-row" aria-label="週フィルター"></div>
+
+                <div id="schedule-list" class="tournament-list" aria-live="polite"></div>
+            </section>
+        </main>
+
+        <section class="ad-section">
+            <div class="ad-slot">広告枠</div>
+        </section>
+
+        <div data-include="includes/footer.html"></div>
+        <script src="assets/js/schedule.js"></script>
+        <script src="assets/js/components.js" defer></script>
+    </body>
+</html>
