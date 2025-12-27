@@ -1,0 +1,107 @@
+﻿{
+  "layout": "weekly",
+  "title": "グレイテスト・ヒッツ",
+  "expires": "終了: 2026年3月5日 午後6時00分まで",
+  "bannerBg": "linear-gradient(90deg, #F74C1B, #FFDC81)",
+  "bannerImage": "assets/img/T_UI_BattlePass_S39_Quests.png",
+  "bannerAlt": "クエストキャラクター",
+  "currentWeek": 2,
+  "weeks": [
+    {
+      "week": 1,
+      "label": "ボーナス報酬",
+      "tasks": [
+        {
+          "title": "キャット・ホロウェイ クエストをクリアする (1)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "",
+          "icon": "assets/img/Reward/ForbiddenFruit_BPQuest/VTID_Glider_RowLiaison_StyleC.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "キャット・ホロウェイ クエストをクリアする (2)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "",
+          "icon": "assets/img/Reward/ForbiddenFruit_BPQuest/VTID_Backbling_RowLiason_StyleC.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "キャット・ホロウェイ クエストをクリアする (4)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "",
+          "icon": "assets/img/Reward/ForbiddenFruit_BPQuest/VTID_Pickaxe_RowLiaison_StyleC.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "キャット・ホロウェイ クエストをクリアする (6)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "",
+          "icon": "assets/img/Reward/ForbiddenFruit_BPQuest/VTID_Character_RowLiason_StyleE.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "キャット・ホロウェイ クエストをクリアする (7)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "",
+          "icon": "assets/img/Reward/ForbiddenFruit_BPQuest/VTID_Character_RowLiason_StyleD.png",
+          "iconAlt": "XP"
+        }
+      ]
+    },
+    {
+      "week": 1,
+      "label": "キャット・ホロウェイ クエスト",
+      "tasks": [
+        {
+          "title": "<Bold>セレブ</>: 複数のマッチにおいて名前付きのエリアでエモートする (3)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "",
+          
+          "iconAlt": "XP"
+        },
+        {
+          "title": "<Bold>セレブ</>: 撃破されたプレイヤーからエキゾチックかミシックの武器を収集する (3)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "",
+          
+          "iconAlt": "XP"
+        },
+        {
+          "title": "<Bold>セレブ</>: プレイヤーを攻撃してから10秒以内に裂け目に入る (1)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "",
+          
+          "iconAlt": "XP"
+        },
+        {
+          "title": "<Bold>大スター</>: インベントリに4つの異なるレア度のアイテムを所持する (1)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "",
+          
+          "iconAlt": "XP"
+        },
+        {
+          "title": "<Bold>大スター</>: ミシックかエキゾチックの武器で、15メートル以内のプレイヤーにダメージを与える (1500)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "",
+          
+          "iconAlt": "XP"
+        },
+        {
+          "title": "<Bold>大スター</>: エピック以上の武器で上空からヘッドショットする (10)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "",
+          
+          "iconAlt": "XP"
+        },
+        {
+          "title": "Victory Royaleを獲得する (1)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "",
+          
+          "iconAlt": "XP"
+        }
+      ]
+    }
+  ]
+}

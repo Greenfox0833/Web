@@ -1,0 +1,87 @@
+﻿{
+  "layout": "weekly",
+  "title": "Blitz Royale: キックスタート",
+  "expires": "終了: 2026年3月5日 午後6時00分まで",
+  "bannerBg": "linear-gradient(90deg, #F74C1B, #FFDC81)",
+  "bannerImage": "assets/img/T_UI_BattlePass_S39_Quests.png",
+  "bannerAlt": "クエストキャラクター",
+  "currentWeek": 2,
+  "weeks": [
+    {
+      "week": 1,
+      "label": "キャット・ホロウェイ クエスト",
+      "tasks": [
+        {
+          "title": "プレイヤーを撃破する (25)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ミシックかエキゾチックの武器を収集する (12)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ストームフェーズを生き延びる (15)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "複数のマッチで裂け目に入る (3)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "着地してから15秒以内に敵を攻撃する (45)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ミシックかエキゾチックの武器でプレイヤーにダメージを与える (5000)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "ショットガンかサブマシンガンでプレイヤーにダメージを与える (5000)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "他のプレイヤーにダメージを与えられた直後にバブルシールドを張る (5)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "残りプレイヤー10人になってからプレイヤーにダメージを与える (1500)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        },
+        {
+          "title": "スライディングかダッシュをしながら扉を突き破る (3)",
+          "start": "2025-12-11T03:00:00+09:00",
+          "xp": "",
+          "icon": "assets/img/T_UI_UniversalXP_Icon_Standard_512.png",
+          "iconAlt": "XP"
+        }
+      ]
+    }
+  ]
+}
